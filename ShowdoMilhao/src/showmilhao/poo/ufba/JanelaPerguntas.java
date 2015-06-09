@@ -6,7 +6,7 @@ import javax.swing.*;
 
 
 
-public class Janela_Perguntas {
+public class JanelaPerguntas {
 
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	
@@ -15,14 +15,13 @@ public class Janela_Perguntas {
 	JButton parar[] = new JButton[1];
 	
 	JFrame w1;
-	JProgressBar b;
 	
 	public static void main(String[] args) {
 		
-		new Janela_Perguntas();
+		new JanelaPerguntas();
 	}
 	
-	public Janela_Perguntas(){
+	public JanelaPerguntas(){
 		w1 = new JFrame();
 		w1.setSize(400,400);
 		w1.setLocation((int)(dim.getWidth()-400)/2,(int)(dim.getHeight()-300)/2);

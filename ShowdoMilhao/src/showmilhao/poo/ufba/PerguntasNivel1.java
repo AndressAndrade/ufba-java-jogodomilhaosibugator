@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Perguntas_Nivel1 {
+public class PerguntasNivel1 {
 	
 	public static void main(String[] args) {
 	
