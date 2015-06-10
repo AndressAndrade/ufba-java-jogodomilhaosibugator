@@ -1,19 +1,23 @@
 package showmilhao.poo.ufba;
 
 import java.awt.*;
+
 import javax.swing.*;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class JanelaPerguntas {
+public class JanelaPerguntas implements ActionListener {
 
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	
 	JLabel	pergunta;
 	JButton res[] = new JButton[4];
-	JButton parar[] = new JButton[1];
+	JButton parar = new JButton();
 	JButton dinheiro[] = new JButton[1];
 	
 	JFrame w1;
+	
 	
 	public static void main(String[] args) {
 		
@@ -27,6 +31,7 @@ public class JanelaPerguntas {
 		w1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		w1.setVisible(true);
 		w1.setLayout(null);
+		
 		
 		res[0] = new JButton("	");
 		res[0].setBounds(52,80,300,40);
@@ -48,12 +53,26 @@ public class JanelaPerguntas {
 		dinheiro[0].setBounds(150, 335,100, 40);
 		w1.add(dinheiro[0]);
 		
-		parar[0] = new JButton("PARAR");
-		parar[0].setBounds(272, 400,80, 40);
-		w1.add(parar[0]);
+		parar = new JButton("PARAR");
+		parar.setBounds(272, 400,80, 40);
+		w1.add(parar);
 		
 		pergunta = new JLabel("Perguntas aqui:");
 		pergunta.setBounds(52,15,300,40);
 		w1.add(pergunta);
+		
+		
+		parar.addActionListener(this);
 	}
+
+	
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == parar) {
+			w1.dispose();
+			JOptionPane.showMessageDialog(null, "Você acumulou X reais");
+		}
+		
+	}
+	
 }
+	
