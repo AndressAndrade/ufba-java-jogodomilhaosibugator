@@ -1,9 +1,7 @@
 package showmilhao.poo.ufba;
 
-
 import java.awt.*;
 import javax.swing.*;
-
 
 
 public class JanelaPerguntas {
@@ -13,6 +11,7 @@ public class JanelaPerguntas {
 	JLabel	pergunta;
 	JButton res[] = new JButton[4];
 	JButton parar[] = new JButton[1];
+	JButton dinheiro[] = new JButton[1];
 	
 	JFrame w1;
 	
@@ -23,8 +22,8 @@ public class JanelaPerguntas {
 	
 	public JanelaPerguntas(){
 		w1 = new JFrame();
-		w1.setSize(400,400);
-		w1.setLocation((int)(dim.getWidth()-400)/2,(int)(dim.getHeight()-300)/2);
+		w1.setSize(400,500);
+		w1.setLocation((int)(dim.getWidth()-400)/2,(int)(dim.getHeight()-500)/2);
 		w1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		w1.setVisible(true);
 		w1.setLayout(null);
@@ -45,8 +44,12 @@ public class JanelaPerguntas {
 		res[3].setBounds(52, 260,300, 40);
 		w1.add(res[3]);
 		
+		dinheiro[0] = new JButton("DINHEIRO");
+		dinheiro[0].setBounds(150, 335,100, 40);
+		w1.add(dinheiro[0]);
+		
 		parar[0] = new JButton("PARAR");
-		parar[0].setBounds(232, 310,120, 40);
+		parar[0].setBounds(272, 400,80, 40);
 		w1.add(parar[0]);
 		
 		pergunta = new JLabel("Perguntas aqui:");
