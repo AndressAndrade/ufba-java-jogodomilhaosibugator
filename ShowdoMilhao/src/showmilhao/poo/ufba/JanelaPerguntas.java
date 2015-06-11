@@ -14,7 +14,8 @@ public class JanelaPerguntas implements ActionListener {
 	JLabel	pergunta;
 	JButton res[] = new JButton[4];
 	JButton parar = new JButton();
-	JButton dinheiro[] = new JButton[1];
+	JLabel  acertar;
+	JLabel  errar;
 	
 	JFrame w1;
 	
@@ -26,12 +27,15 @@ public class JanelaPerguntas implements ActionListener {
 	
 	public JanelaPerguntas(){
 		w1 = new JFrame();
-		w1.setSize(400,500);
-		w1.setLocation((int)(dim.getWidth()-400)/2,(int)(dim.getHeight()-500)/2);
+		w1.setSize(420,450);
+		w1.setLocation((int)(dim.getWidth()-420)/2,(int)(dim.getHeight()-450)/2);
 		w1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		w1.setVisible(true);
 		w1.setLayout(null);
 		
+		pergunta = new JLabel("Perguntas aqui:");
+		pergunta.setBounds(52,15,300,40);
+		w1.add(pergunta);
 		
 		res[0] = new JButton("	");
 		res[0].setBounds(52,80,300,40);
@@ -49,18 +53,17 @@ public class JanelaPerguntas implements ActionListener {
 		res[3].setBounds(52, 260,300, 40);
 		w1.add(res[3]);
 		
-		dinheiro[0] = new JButton("DINHEIRO");
-		dinheiro[0].setBounds(150, 335,100, 40);
-		w1.add(dinheiro[0]);
-		
 		parar = new JButton("PARAR");
-		parar.setBounds(272, 400,80, 40);
+		parar.setBounds(272, 340,80, 40);
 		w1.add(parar);
 		
-		pergunta = new JLabel("Perguntas aqui:");
-		pergunta.setBounds(52,15,300,40);
-		w1.add(pergunta);
+		acertar = new JLabel("Acertar: X reais");
+		acertar.setBounds(52,320,150,40);
+		w1.add(acertar);
 		
+		errar = new JLabel("Errar: X reais");
+		errar.setBounds(52,350,150,40);
+		w1.add(errar);
 		
 		parar.addActionListener(this);
 	}
