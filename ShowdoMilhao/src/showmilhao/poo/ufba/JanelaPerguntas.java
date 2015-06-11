@@ -16,6 +16,7 @@ public class JanelaPerguntas implements ActionListener {
 	JButton parar = new JButton();
 	JLabel  acertar;
 	JLabel  errar;
+	JButton  pular;
 	
 	JFrame w1;
 	
@@ -57,6 +58,11 @@ public class JanelaPerguntas implements ActionListener {
 		parar.setBounds(272, 340,80, 40);
 		w1.add(parar);
 		
+		pular = new JButton("PULAR");
+		pular.setBounds(172, 340, 80, 40);
+		w1.add(pular);
+		
+		
 		acertar = new JLabel("Acertar: X reais");
 		acertar.setBounds(52,320,150,40);
 		w1.add(acertar);
@@ -70,10 +76,12 @@ public class JanelaPerguntas implements ActionListener {
 
 	
 	public void actionPerformed(ActionEvent e) {
+		
 		if(e.getSource() == parar) {
 			w1.dispose();
 			JOptionPane.showMessageDialog(null, "Você acumulou X reais");
 		}
+		
 		
 	}
 	
