@@ -6,6 +6,7 @@ import javax.swing.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Set;
 
 public class JanelaPerguntas implements ActionListener {
 
@@ -28,6 +29,7 @@ public class JanelaPerguntas implements ActionListener {
 		
 		new JanelaPerguntas();
 	}
+	
 	
 	public JanelaPerguntas(){
 		w1 = new JFrame();
@@ -74,7 +76,7 @@ public class JanelaPerguntas implements ActionListener {
 		errar.setBounds(52,350,150,40);
 		w1.add(errar);
 		
-		pulos = new JLabel ("Pulos: X");
+		pulos = new JLabel ("Você tem 3 pulos"); 
 		pulos.setBounds(52,380,150,40);
 		w1.add(pulos);
 		
@@ -90,13 +92,18 @@ public class JanelaPerguntas implements ActionListener {
 			JOptionPane.showMessageDialog(null, "Você acumulou X reais");
 		}
 		
-	
-		
 		if(e.getSource() == pular) {		
 			
 			if (nDePulos > 0) {
-				//comando para pular
+				//falta inserir o comando para pular
+				
 				nDePulos--;
+				if (nDePulos != 1) {
+					pulos.setText("Você tem " + nDePulos + " pulos");
+				}
+				else {
+					pulos.setText("Você tem " + nDePulos + " pulo");
+				}
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "Você não tem mais pulos");
