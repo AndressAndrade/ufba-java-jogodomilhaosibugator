@@ -14,12 +14,15 @@ public class JanelaPerguntas implements ActionListener {
 	JLabel	pergunta;
 	JButton res[] = new JButton[4];
 	JButton parar = new JButton();
+	JButton  pular;
+	
 	JLabel  acertar;
 	JLabel  errar;
-	JButton  pular;
+	JLabel  pulos;
 	
 	JFrame w1;
 	
+	int nDePulos = 3;
 	
 	public static void main(String[] args) {
 		
@@ -71,7 +74,12 @@ public class JanelaPerguntas implements ActionListener {
 		errar.setBounds(52,350,150,40);
 		w1.add(errar);
 		
+		pulos = new JLabel ("Pulos: X");
+		pulos.setBounds(52,380,150,40);
+		w1.add(pulos);
+		
 		parar.addActionListener(this);
+		pular.addActionListener(this);
 	}
 
 	
@@ -81,6 +89,20 @@ public class JanelaPerguntas implements ActionListener {
 			w1.dispose();
 			JOptionPane.showMessageDialog(null, "Você acumulou X reais");
 		}
+		
+	
+		
+		if(e.getSource() == pular) {		
+			
+			if (nDePulos > 0) {
+				//comando para pular
+				nDePulos--;
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "Você não tem mais pulos");
+			}
+		}
+			
 		
 		
 	}
