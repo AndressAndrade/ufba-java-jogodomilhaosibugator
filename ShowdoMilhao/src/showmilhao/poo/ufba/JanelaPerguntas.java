@@ -23,7 +23,7 @@ public class JanelaPerguntas implements ActionListener {
 	JLabel  errar;
 	JLabel  pulos;
 	
-	JFrame w1;
+	static  JFrame  w1;
 	
 	int nDePulos = 3;
 	
@@ -123,12 +123,20 @@ public class JanelaPerguntas implements ActionListener {
 		Collections.shuffle(listaQuestoes);
 		
 		//janelas de perguntas
-		if (acertos != 5) {
-			new JanelaPerguntas();
+		new JanelaPerguntas();
+		
+		
+		//invocando as perguntas p/ o 1º nível - necessário 5 acertos
+		while (acertos < 5) {
 			setarCaixa();
 		}
 		
-
+		//fechando a caixa p/ testar o comando de 5 acertos
+		if (acertos == 5) {
+			w1.dispose();
+		}
+		//quando o número de acertos for igual à 5 -> passar p/ o nível 2
+		
 	}
 	
 	
@@ -192,7 +200,6 @@ public class JanelaPerguntas implements ActionListener {
 	//função para setar as perguntas na JanelaPerguntas
 	public static void setarCaixa() {
 		Questao questao = listaQuestoes.get(0);
-		listaQuestoes.remove(0);
 		List <String> respostas = questao.respostas;
 		String respostaCorreta = questao.respostaCorreta;
 			
@@ -201,6 +208,17 @@ public class JanelaPerguntas implements ActionListener {
 		res[1].setText(respostas.get(1));
 		res[2].setText(respostas.get(2));
 		res[3].setText(respostas.get(3));
+	}
+	
+	//além de setar a caixa, remove a questão que foi utilizada, evitando repetição
+	public static void embaralharQuestoes() {
+		listaQuestoes.remove(0);
+		setarCaixa();
+	}
+	
+	
+	public String obterRespostaCorreta(Questao questao) {
+		return questao.respostaCorreta;
 	}
 	
 	
@@ -215,8 +233,8 @@ public class JanelaPerguntas implements ActionListener {
 			
 			if (nDePulos > 0) {
 				//falta inserir o comando para pular
-				setarCaixa();
 				nDePulos--;
+				embaralharQuestoes();
 				
 				if (nDePulos != 1) {
 					pulos.setText("Você tem " + nDePulos + " pulos");
@@ -233,51 +251,58 @@ public class JanelaPerguntas implements ActionListener {
 		
 		//Tratamento de eventos dos botões de resposta
 		if (e.getSource() == res[0]) {
-			String texto = res[0].getText();
-			if (texto == "c") {
-				JOptionPane.showMessageDialog(null, "Resposta correta!");
+			
+			if (res[0].getText() == obterRespostaCorreta(listaQuestoes.get(0))) {
+				JOptionPane.showMessageDialog(null, "Acertou!");
+				embaralharQuestoes();
+				acertos++;
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "Perdeu tudo!");
 				w1.dispose();
+				JOptionPane.showMessageDialog(null, "Perdeu tudo!");
 			}
 		}
 		
 		if (e.getSource() == res[1]) {
-			String texto = res[1].getText();
-			if (texto == "c") {
-				JOptionPane.showMessageDialog(null, "Resposta correta!");
+			
+			if (res[1].getText() == obterRespostaCorreta(listaQuestoes.get(0))) {
+				JOptionPane.showMessageDialog(null, "Acertou!");
+				embaralharQuestoes();
+				acertos++;
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "Perdeu tudo!");
 				w1.dispose();
+				JOptionPane.showMessageDialog(null, "Perdeu tudo!");
 			}
 		}
 		
 		if (e.getSource() == res[2]) {
-			String texto = res[2].getText();
-			if (texto == "c") {
-				JOptionPane.showMessageDialog(null, "Resposta correta!");
+			
+			if (res[2].getText() == obterRespostaCorreta(listaQuestoes.get(0))) {
+				JOptionPane.showMessageDialog(null, "Acertou!");
+				embaralharQuestoes();
+				acertos++;
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "Perdeu tudo!");
 				w1.dispose();
+				JOptionPane.showMessageDialog(null, "Perdeu tudo!");
 			}
 		}
 		
 		if (e.getSource() == res[3]) {
-			String texto = res[3].getText();
-			if (texto == "c") {
-				JOptionPane.showMessageDialog(null, "Resposta correta!");
+			
+			if (res[3].getText() == obterRespostaCorreta(listaQuestoes.get(0))) {
+				JOptionPane.showMessageDialog(null, "Acertou!");
+				embaralharQuestoes();
+				acertos++;
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "Perdeu tudo!");
 				w1.dispose();
+				JOptionPane.showMessageDialog(null, "Perdeu tudo!");
 			}
 		}
 		
 		
-			
 		
 		
 	}
