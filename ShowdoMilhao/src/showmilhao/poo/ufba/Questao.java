@@ -1,13 +1,13 @@
 package showmilhao.poo.ufba;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Questao {
 	
 	String pergunta;
 	
-	Set <String> respostas;
+	List <String> respostas;
 	
 	String respostaCorreta;
 	
@@ -20,21 +20,15 @@ public class Questao {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Set<String> rq1 = new HashSet<String>();
+		List <String> rq1 = new ArrayList <String>();
 		rq1.add("Andressa");
 		rq1.add("Susi");
 		
 		Questao q1 = new Questao("Qual seu nome?",rq1,(String)rq1.toArray()[0],1,100,1);
 		
-		Set<String> rq2 = new HashSet<String>();
-		rq2.add("Andressa");
-		rq2.add("Susi");
-		
-		Questao q2 = new Questao("Qual seu nome?",rq2,(String)rq2.toArray()[0],1,100,2);
-		
 	}
 
-	public Questao(String pergunta, Set<String> respostas,
+	public Questao(String pergunta, List<String> respostas,
 			String respostaCorreta, int nivel, int valor, int numeracao) {
 		super();
 		this.pergunta = pergunta;
@@ -44,7 +38,7 @@ public class Questao {
 		this.valor = valor;
 		this.numeracao = numeracao;
 	}
-
+	
 	public String getPergunta() {
 		return pergunta;
 	}
@@ -53,11 +47,11 @@ public class Questao {
 		this.pergunta = pergunta;
 	}
 
-	public Set<String> getRespostas() {
+	public List <String> getRespostas() {
 		return respostas;
 	}
 
-	public void setRespostas(Set<String> respostas) {
+	public void setRespostas(List <String> respostas) {
 		this.respostas = respostas;
 	}
 
@@ -92,8 +86,5 @@ public class Questao {
 	public void setNumeracao(int numeracao) {
 		this.numeracao = numeracao;
 	}
-	
-	
-	
 
 }
