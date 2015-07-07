@@ -19,16 +19,19 @@ public class JanelaPerguntas implements ActionListener {
 	JButton parar = new JButton();
 	JButton  pular;
 	
-	JLabel  acertar;
-	JLabel  acumular;
+	static  JLabel  acertar;
+	static  JLabel  acumular;
 	static  JLabel  pulos;
 	
 	static  JFrame  w1;
 	
 	int nDePulos = 3;
-	int dinheiro = 0;
+	static  int dinheiro = 0;
 	
 	static int acertos = 1;
+	
+	static int acertos2 = 1;
+	static int acertos3 = 1;
 	
 	static List<Questao> listaQuestoes = new ArrayList();
 	static List<Questao> listaQuestoes2 = new ArrayList();
@@ -383,12 +386,12 @@ public class JanelaPerguntas implements ActionListener {
 		new JanelaPerguntas();
 		
 		//invocando as perguntas p/ o 1º nível - necessário 5 acertos
-		while (acertos <= 5) {
+		if (acertos < 5) {
 			setarCaixa(1);
 		}
 		
 		//fechando a caixa p/ testar o comando de 5 acertos
-		if (acertos > 5 && acertos < 10) {
+		if (acertos >= 5 && acertos < 10) {
 			setarCaixa(2);
 		}
 		
@@ -441,15 +444,15 @@ public class JanelaPerguntas implements ActionListener {
 		w1.add(pular);
 		
 		acertar = new JLabel("Acerto: R$:1000,00");
-		acertar.setBounds(26,320,150,40);
+		acertar.setBounds(15,320,150,40);
 		w1.add(acertar);
 		
 		acumular = new JLabel("Acumulado: R$:" + dinheiro + ",00");
-		acumular.setBounds(26,350,150,40);
+		acumular.setBounds(15,350,150,40);
 		w1.add(acumular);
 		
 		pulos = new JLabel ("Você tem 3 pulos"); 
-		pulos.setBounds(26,380,150,40);
+		pulos.setBounds(15,380,150,40);
 		w1.add(pulos);
 		
 		parar.addActionListener(this);
@@ -557,7 +560,7 @@ public class JanelaPerguntas implements ActionListener {
 					//falta inserir o comando para pular
 					nDePulos--;
 					
-					if (acertos <= 5) {
+					if (acertos < 5) {
 						setarQuestao(1);
 						
 						if (nDePulos != 1) {
@@ -568,7 +571,7 @@ public class JanelaPerguntas implements ActionListener {
 						}
 					}
 					
-					if (acertos > 5 && acertos < 10) {
+					if (acertos >= 5 && acertos < 10) {
 						setarQuestao(2);
 						
 						if (nDePulos != 1) {
@@ -602,17 +605,32 @@ public class JanelaPerguntas implements ActionListener {
 				if (res[0].getText() == obterRespostaCorreta(listaQuestoes.get(0))) {
 					JOptionPane.showMessageDialog(null, "Acertou!");
 					
-					if (acertos <= 5) {
+					if (acertos < 5) {
 						setarQuestao(1);
+						int dinheiro = acertos * 1000;
+						acumular.setText("Acumulado: R$" + dinheiro + ",00");
+						Questao questao = listaQuestoes.get(0);
+						int valor = questao.getValor();
+						acertar.setText("Acerto: R$:"+ valor + ",00");
 					}
-					if (acertos > 5 && acertos < 10) {
+					if (acertos >= 5 && acertos < 10) {
 						setarQuestao(2);
+						int dinheiro = acertos2 * 10000;
+						acumular.setText("Acumulado: R$" + dinheiro + ",00");
+						acertos2++;
 					}
-					if (acertos >= 10 && acertos < 15) {
+					if (acertos >= 10 && acertos3 < 15) {
 						setarQuestao(3);
+						int dinheiro = acertos3 * 100000;
+						acumular.setText("Acumulado: R$" + dinheiro + ",00");
+						Questao questao = listaQuestoes3.get(0);
+						int valor = questao.getValor();
+						acertar.setText("Acerto: R$:"+ valor + ",00");
+						acertos3++;
 					}
 					if (acertos == 15) {
 						setarQuestao(4);
+						acertar.setText("Milhão: R$:1.000.000,00");
 					}
 					
 					acertos++;
@@ -628,17 +646,35 @@ public class JanelaPerguntas implements ActionListener {
 				if (res[1].getText() == obterRespostaCorreta(listaQuestoes.get(0))) {
 					JOptionPane.showMessageDialog(null, "Acertou!");
 					
-					if (acertos <= 5) {
+					if (acertos < 5) {
 						setarQuestao(1);
+						int dinheiro = acertos * 1000;
+						acumular.setText("Acumulado: R$" + dinheiro + ",00");
+						Questao questao = listaQuestoes.get(0);
+						int valor = questao.getValor();
+						acertar.setText("Acerto: R$:"+ valor + ",00");
 					}
-					if (acertos > 5 && acertos < 10) {
+					if (acertos >= 5 && acertos < 10) {
 						setarQuestao(2);
+						int dinheiro = acertos2 * 10000;
+						acumular.setText("Acumulado: R$" + dinheiro + ",00");
+						Questao questao = listaQuestoes2.get(0);
+						int valor = questao.getValor();
+						acertar.setText("Acerto: R$:"+ valor + ",00");
+						acertos2++;
 					}
 					if (acertos >= 10 && acertos < 15) {
 						setarQuestao(3);
+						int dinheiro = acertos3 * 10000;
+						acumular.setText("Acumulado: R$" + dinheiro + ",00");
+						Questao questao = listaQuestoes3.get(0);
+						int valor = questao.getValor();
+						acertar.setText("Acerto: R$:"+ valor + ",00");
+						acertos3++;
 					}
 					if (acertos == 10) {
 						setarQuestao(4);
+						acertar.setText("Milhão: R$:1.000.000,00");
 					}
 					
 					acertos++;
@@ -654,17 +690,35 @@ public class JanelaPerguntas implements ActionListener {
 				if (res[2].getText() == obterRespostaCorreta(listaQuestoes.get(0))) {
 					JOptionPane.showMessageDialog(null, "Acertou!");
 
-					if (acertos <= 5) {
+					if (acertos < 5) {
 						setarQuestao(1);
+						int dinheiro = acertos * 1000;
+						acumular.setText("Acumulado: R$" + dinheiro + ",00");
+						Questao questao = listaQuestoes.get(0);
+						int valor = questao.getValor();
+						acertar.setText("Acerto: R$:"+ valor + ",00");
 					}
-					if (acertos > 5 && acertos < 10) {
+					if (acertos >= 5 && acertos < 10) {
 						setarQuestao(2);
+						int dinheiro = acertos2 * 10000;
+						acumular.setText("Acumulado: R$" + dinheiro + ",00");
+						Questao questao = listaQuestoes2.get(0);
+						int valor = questao.getValor();
+						acertar.setText("Acerto: R$:"+ valor + ",00");
+						acertos2++;
 					}
 					if (acertos >= 10 && acertos < 15) {
 						setarQuestao(3);
+						int dinheiro = acertos3 * 100000;
+						acumular.setText("Acumulado: R$" + dinheiro + ",00");
+						Questao questao = listaQuestoes3.get(0);
+						int valor = questao.getValor();
+						acertar.setText("Acerto: R$:"+ valor + ",00");
+						acertos3++;
 					}
 					if (acertos == 15) {
 						setarQuestao(4);
+						acertar.setText("Milhão: R$:1.000.000,00");
 					}
 					
 					acertos++;
@@ -680,17 +734,32 @@ public class JanelaPerguntas implements ActionListener {
 				if (res[3].getText() == obterRespostaCorreta(listaQuestoes.get(0))) {
 					JOptionPane.showMessageDialog(null, "Acertou!");
 					
-					if (acertos <= 5) {
+					if (acertos < 5) {
 						setarQuestao(1);
+						int dinheiro = acertos * 1000;
+						acumular.setText("Acumulado: R$" + dinheiro + ",00");
+						Questao questao = listaQuestoes.get(0);
+						int valor = questao.getValor();
+						acertar.setText("Acerto: R$:"+ valor + ",00");
 					}
-					if (acertos > 5 && acertos < 10) {
+					if (acertos >= 5 && acertos < 10) {
 						setarQuestao(2);
+						int dinheiro = acertos2 * 10000;
+						acumular.setText("Acumulado: R$" + dinheiro + ",00");
+						Questao questao = listaQuestoes2.get(0);
+						int valor = questao.getValor();
+						acertar.setText("Acerto: R$:"+ valor + ",00");
+						acertos2++;
 					}
 					if (acertos >= 10 && acertos < 15) {
 						setarQuestao(3);
+						int dinheiro = acertos3 * 100000;
+						acumular.setText("Acumulado: R$" + dinheiro + ",00");
+						acertos3++;
 					}
 					if (acertos == 15) {
 						setarQuestao(4);
+						acertar.setText("Milhão: R$:1.000.000,00");
 					}
 					
 					acertos++;
