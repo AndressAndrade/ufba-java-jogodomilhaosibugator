@@ -343,6 +343,7 @@ public class JanelaPerguntas implements ActionListener {
 		listaQuestoes.add(q10);
 		
 		//lista de questões nível 2
+		listaQuestoes2.add(t1);
 		listaQuestoes2.add(t2);
 		listaQuestoes2.add(t3);
 		listaQuestoes2.add(t4);
@@ -354,6 +355,7 @@ public class JanelaPerguntas implements ActionListener {
 		listaQuestoes2.add(t10);
 		
 		//lista de questões nível 3
+		listaQuestoes3.add(l1);
 		listaQuestoes3.add(l2);
 		listaQuestoes3.add(l3);
 		listaQuestoes3.add(l4);
@@ -365,6 +367,7 @@ public class JanelaPerguntas implements ActionListener {
 		listaQuestoes3.add(l10);
 		
 		//lista de questões finais
+		listaQuestoes4.add(f1);
 		listaQuestoes4.add(f2);
 		listaQuestoes4.add(f3);
 		listaQuestoes4.add(f4);
@@ -444,15 +447,15 @@ public class JanelaPerguntas implements ActionListener {
 		w1.add(pular);
 		
 		acertar = new JLabel("Acerto: R$:1000,00");
-		acertar.setBounds(15,320,150,40);
+		acertar.setBounds(12,320,150,40);
 		w1.add(acertar);
 		
 		acumular = new JLabel("Acumulado: R$:" + dinheiro + ",00");
-		acumular.setBounds(15,350,150,40);
+		acumular.setBounds(12,350,180,40);
 		w1.add(acumular);
 		
 		pulos = new JLabel ("Você tem 3 pulos"); 
-		pulos.setBounds(15,380,150,40);
+		pulos.setBounds(12,380,150,40);
 		w1.add(pulos);
 		
 		parar.addActionListener(this);
@@ -615,22 +618,48 @@ public class JanelaPerguntas implements ActionListener {
 					}
 					if (acertos >= 5 && acertos < 10) {
 						setarQuestao(2);
-						int dinheiro = acertos2 * 10000;
-						acumular.setText("Acumulado: R$" + dinheiro + ",00");
-						acertos2++;
+						Questao questao = listaQuestoes2.get(0);
+						int valor = questao.getValor();
+						acertar.setText("Acerto: R$:"+ valor + ",00");
+						
+						if (acertos == 5) {
+							acumular.setText("Acumulado: R$:5000,00");
+						}
+						
+						else {
+							int dinheiro = acertos2 * 10000;
+							acumular.setText("Acumulado: R$" + dinheiro + ",00");
+							acertos2++;
+						}
+						
 					}
-					if (acertos >= 10 && acertos3 < 15) {
+					if (acertos >= 10 && acertos < 15) {
 						setarQuestao(3);
-						int dinheiro = acertos3 * 100000;
-						acumular.setText("Acumulado: R$" + dinheiro + ",00");
 						Questao questao = listaQuestoes3.get(0);
 						int valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
-						acertos3++;
+						
+						if (acertos == 10) {
+							acumular.setText("Acumulado: R$:50000,00");
+						}
+						
+						else {
+							int dinheiro = acertos3 * 100000;
+							acumular.setText("Acumulado: R$" + dinheiro + ",00");
+							acertos3++;
+						}
 					}
 					if (acertos == 15) {
 						setarQuestao(4);
 						acertar.setText("Milhão: R$:1.000.000,00");
+						acumular.setText("Acumulado: R$: 500.000,00");
+					}
+					
+					if (acertos == 16) {
+						w1.dispose();
+						JOptionPane.showMessageDialog(null, "Parabéns! Você venceu o Jogo do Milhão Sibugator\n" 
+								+ "e ganhou um prêmio de R$:1.000.000,00 !!!");
+							
 					}
 					
 					acertos++;
@@ -656,25 +685,47 @@ public class JanelaPerguntas implements ActionListener {
 					}
 					if (acertos >= 5 && acertos < 10) {
 						setarQuestao(2);
-						int dinheiro = acertos2 * 10000;
-						acumular.setText("Acumulado: R$" + dinheiro + ",00");
 						Questao questao = listaQuestoes2.get(0);
 						int valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
-						acertos2++;
+						
+						if (acertos == 5) {
+							acumular.setText("Acumulado: R$:5000,00");
+						}
+						
+						else {
+							int dinheiro = acertos2 * 10000;
+							acumular.setText("Acumulado: R$" + dinheiro + ",00");
+							acertos2++;
+						}
 					}
 					if (acertos >= 10 && acertos < 15) {
 						setarQuestao(3);
-						int dinheiro = acertos3 * 10000;
-						acumular.setText("Acumulado: R$" + dinheiro + ",00");
 						Questao questao = listaQuestoes3.get(0);
 						int valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
-						acertos3++;
+						
+						if (acertos == 10) {
+							acumular.setText("Acumulado: R$:50000,00");
+						}
+						
+						else {
+							int dinheiro = acertos3 * 100000;
+							acumular.setText("Acumulado: R$" + dinheiro + ",00");
+							acertos3++;
+						}
 					}
-					if (acertos == 10) {
+					if (acertos == 15) {
 						setarQuestao(4);
 						acertar.setText("Milhão: R$:1.000.000,00");
+						acumular.setText("Acumulado: R$: 500.000,00");
+					}
+					
+					if (acertos == 16) {
+						w1.dispose();
+						JOptionPane.showMessageDialog(null, "Parabéns! Você venceu o Jogo do Milhão Sibugator\n" 
+								+ "e ganhou um prêmio de R$:1.000.000,00 !!!");
+							
 					}
 					
 					acertos++;
@@ -700,25 +751,47 @@ public class JanelaPerguntas implements ActionListener {
 					}
 					if (acertos >= 5 && acertos < 10) {
 						setarQuestao(2);
-						int dinheiro = acertos2 * 10000;
-						acumular.setText("Acumulado: R$" + dinheiro + ",00");
 						Questao questao = listaQuestoes2.get(0);
 						int valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
-						acertos2++;
+						
+						if (acertos == 5) {
+							acumular.setText("Acumulado: R$:5000,00");
+						}
+						
+						else {
+							int dinheiro = acertos2 * 10000;
+							acumular.setText("Acumulado: R$" + dinheiro + ",00");
+							acertos2++;
+						}
 					}
 					if (acertos >= 10 && acertos < 15) {
 						setarQuestao(3);
-						int dinheiro = acertos3 * 100000;
-						acumular.setText("Acumulado: R$" + dinheiro + ",00");
 						Questao questao = listaQuestoes3.get(0);
 						int valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
-						acertos3++;
+						
+						if (acertos == 10) {
+							acumular.setText("Acumulado: R$:50000,00");
+						}
+						
+						else {
+							int dinheiro = acertos3 * 100000;
+							acumular.setText("Acumulado: R$" + dinheiro + ",00");
+							acertos3++;
+						}
 					}
 					if (acertos == 15) {
 						setarQuestao(4);
 						acertar.setText("Milhão: R$:1.000.000,00");
+						acumular.setText("Acumulado: R$: 500.000,00");
+					}
+					
+					if (acertos == 16) {
+						w1.dispose();
+						JOptionPane.showMessageDialog(null, "Parabéns! Você venceu o Jogo do Milhão Sibugator\n" 
+								+ "e ganhou um prêmio de R$:1.000.000,00 !!!");
+							
 					}
 					
 					acertos++;
@@ -744,22 +817,47 @@ public class JanelaPerguntas implements ActionListener {
 					}
 					if (acertos >= 5 && acertos < 10) {
 						setarQuestao(2);
-						int dinheiro = acertos2 * 10000;
-						acumular.setText("Acumulado: R$" + dinheiro + ",00");
 						Questao questao = listaQuestoes2.get(0);
 						int valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
-						acertos2++;
+						
+						if (acertos == 5) {
+							acumular.setText("Acumulado: R$:5000,00");
+						}
+						
+						else {
+							int dinheiro = acertos2 * 10000;
+							acumular.setText("Acumulado: R$" + dinheiro + ",00");
+							acertos2++;
+						}
 					}
 					if (acertos >= 10 && acertos < 15) {
 						setarQuestao(3);
-						int dinheiro = acertos3 * 100000;
-						acumular.setText("Acumulado: R$" + dinheiro + ",00");
-						acertos3++;
+						Questao questao = listaQuestoes3.get(0);
+						int valor = questao.getValor();
+						acertar.setText("Acerto: R$:"+ valor + ",00");
+						
+						if (acertos == 10) {
+							acumular.setText("Acumulado: R$:50000,00");
+						}
+						
+						else {
+							int dinheiro = acertos3 * 100000;
+							acumular.setText("Acumulado: R$" + dinheiro + ",00");
+							acertos3++;
+						}
 					}
 					if (acertos == 15) {
 						setarQuestao(4);
 						acertar.setText("Milhão: R$:1.000.000,00");
+						acumular.setText("Acumulado: R$: 500.000,00");
+					}
+					
+					if (acertos == 16) {
+						w1.dispose();
+						JOptionPane.showMessageDialog(null, "Parabéns! Você venceu o Jogo do Milhão Sibugator\n" 
+								+ "e ganhou um prêmio de R$:1.000.000,00 !!!");
+							
 					}
 					
 					acertos++;
