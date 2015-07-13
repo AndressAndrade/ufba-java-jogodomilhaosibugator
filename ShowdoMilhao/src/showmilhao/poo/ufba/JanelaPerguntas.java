@@ -27,9 +27,9 @@ public class JanelaPerguntas implements ActionListener {
 	
 	int nDePulos = 3;
 	static  int dinheiro = 0;
+	static  int acumulado = 0;
 	
 	static int acertos = 1;
-	
 	static int acertos2 = 1;
 	static int acertos3 = 1;
 	
@@ -554,7 +554,34 @@ public class JanelaPerguntas implements ActionListener {
 			
 			if (e.getSource() == parar) {
 				w1.dispose();
-				JOptionPane.showMessageDialog(null, "Você acumulou X reais");
+				
+				if (acertos <= 6) {
+					
+					acumulado = (acertos -1) * 1000;
+					JOptionPane.showMessageDialog(null, "Você acumulou R$:" + acumulado + ",00");
+				}
+				
+				if (acertos > 6 && acertos <= 11) {
+
+					acumulado = (acertos2 -1) * 10000;
+					if (acertos == 11) {
+						JOptionPane.showMessageDialog(null, "Você acumulou R$:50000,00");
+					}
+					else {
+						JOptionPane.showMessageDialog(null, "Você acumulou R$:" + acumulado + ",00");
+					}
+				}
+				
+				if (acertos > 11 && acertos <= 16) {
+					acumulado = (acertos3 -1) * 100000;
+					if (acertos == 16) {
+						JOptionPane.showMessageDialog(null, "Você acumulou R$:500.000,00");
+					}
+					else {
+						JOptionPane.showMessageDialog(null, "Você acumulou R$:" + acumulado + ",00");
+					}
+				}
+				
 			}
 			
 			if (e.getSource() == pular) {		
@@ -631,6 +658,7 @@ public class JanelaPerguntas implements ActionListener {
 							acumular.setText("Acumulado: R$" + dinheiro + ",00");
 							acertos2++;
 						}
+		
 						
 					}
 					if (acertos >= 10 && acertos < 15) {
