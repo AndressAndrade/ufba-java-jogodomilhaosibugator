@@ -694,7 +694,35 @@ public class JanelaPerguntas implements ActionListener {
 				}
 				else {
 					w1.dispose();
-					JOptionPane.showMessageDialog(null, "Perdeu tudo!");
+					if (acertos <= 6) {
+						
+						acumulado = (acertos -1) * 1000;
+						acumulado /= 2;
+						JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
+					}
+					
+					if (acertos > 6 && acertos <= 11) {
+
+						acumulado = (acertos2 -1) * 10000;
+						acumulado /= 2;
+						if (acertos == 11) {
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:50000,00");
+						}
+						else {
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
+						}
+					}
+					
+					if (acertos > 11 && acertos <= 16) {
+						acumulado = (acertos3 -1) * 100000;
+						acumulado /= 2;
+						if (acertos == 16) {
+							JOptionPane.showMessageDialog(null, "Você perdeu tudo.");
+						}
+						else {
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
+						}
+					}
 				}
 			}
 			
@@ -760,7 +788,35 @@ public class JanelaPerguntas implements ActionListener {
 				}
 				else {
 					w1.dispose();
-					JOptionPane.showMessageDialog(null, "Perdeu tudo!");
+					if (acertos <= 6) {
+						
+						acumulado = (acertos -1) * 1000;
+						acumulado /= 2;
+						JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
+					}
+					
+					if (acertos > 6 && acertos <= 11) {
+
+						acumulado = (acertos2 -1) * 10000;
+						acumulado /= 2;
+						if (acertos == 11) {
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:50000,00");
+						}
+						else {
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
+						}
+					}
+					
+					if (acertos > 11 && acertos <= 16) {
+						acumulado = (acertos3 -1) * 100000;
+						acumulado /= 2;
+						if (acertos == 16) {
+							JOptionPane.showMessageDialog(null, "Você perdeu tudo.");
+						}
+						else {
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
+						}
+					}
 				}
 			}
 			
@@ -826,7 +882,36 @@ public class JanelaPerguntas implements ActionListener {
 				}
 				else {
 					w1.dispose();
-					JOptionPane.showMessageDialog(null, "Perdeu tudo!");
+					if (acertos <= 6) {
+						
+						acumulado = (acertos -1) * 1000;
+						acumulado /= 2;
+						JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
+					}
+					
+					if (acertos > 6 && acertos <= 11) {
+
+						acumulado = (acertos2 -1) * 10000;
+						acumulado /= 2;
+						if (acertos == 11) {
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:50000,00");
+						}
+						else {
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
+						}
+					}
+					
+					if (acertos > 11 && acertos <= 16) {
+						acumulado = (acertos3 -1) * 100000;
+						acumulado /= 2;
+						if (acertos == 16) {
+							JOptionPane.showMessageDialog(null, "Você perdeu tudo.");
+						}
+						else {
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
+						}
+					}
+					
 				}
 			}
 			
@@ -892,7 +977,35 @@ public class JanelaPerguntas implements ActionListener {
 				}
 				else {
 					w1.dispose();
-					JOptionPane.showMessageDialog(null, "Perdeu tudo!");
+					if (acertos <= 6) {
+						
+						acumulado = (acertos -1) * 1000;
+						acumulado /= 2;
+						JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
+					}
+					
+					if (acertos > 6 && acertos <= 11) {
+
+						acumulado = (acertos2 -1) * 10000;
+						acumulado /= 2;
+						if (acertos == 11) {
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:50000,00");
+						}
+						else {
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
+						}
+					}
+					
+					if (acertos > 11 && acertos <= 16) {
+						acumulado = (acertos3 -1) * 100000;
+						acumulado /= 2;
+						if (acertos == 16) {
+							JOptionPane.showMessageDialog(null, "Você perdeu tudo.");
+						}
+						else {
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
+						}
+					}
 				}
 			}
 			
