@@ -706,7 +706,7 @@ public class JanelaPerguntas implements ActionListener {
 						acumulado = (acertos2 -1) * 10000;
 						acumulado /= 2;
 						if (acertos == 11) {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:50000,00");
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:25000,00");
 						}
 						else {
 							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
@@ -800,7 +800,7 @@ public class JanelaPerguntas implements ActionListener {
 						acumulado = (acertos2 -1) * 10000;
 						acumulado /= 2;
 						if (acertos == 11) {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:50000,00");
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:25000,00");
 						}
 						else {
 							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
@@ -894,7 +894,7 @@ public class JanelaPerguntas implements ActionListener {
 						acumulado = (acertos2 -1) * 10000;
 						acumulado /= 2;
 						if (acertos == 11) {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:50000,00");
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:25000,00");
 						}
 						else {
 							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
@@ -989,7 +989,7 @@ public class JanelaPerguntas implements ActionListener {
 						acumulado = (acertos2 -1) * 10000;
 						acumulado /= 2;
 						if (acertos == 11) {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:50000,00");
+							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:25000,00");
 						}
 						else {
 							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00");
