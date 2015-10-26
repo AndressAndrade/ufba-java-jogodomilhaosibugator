@@ -26,7 +26,7 @@ public class Questionario {
 				
 				
 				// perform program logic here
-				System.out.println(nivel + ":" + pergunta + resposta1 + resposta2 + resposta3 + resposta4 + respostaCerta);
+				System.out.println(nivel + ": " + pergunta + " : " + resposta1 + " : " + resposta2 +  " : " +resposta3 + " : " + resposta4 + " : " + respostaCerta);
 			}
 	
 			perguntas.close();
