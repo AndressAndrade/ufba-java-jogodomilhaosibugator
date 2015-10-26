@@ -19,12 +19,6 @@ public class Questao {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		List <String> rq1 = new ArrayList <String>();
-		rq1.add("Andressa");
-		rq1.add("Susi");
-		
-		Questao q1 = new Questao("Qual seu nome?",rq1,(String)rq1.toArray()[0],1,100,1);
 		
 	}
 
