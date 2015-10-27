@@ -42,26 +42,22 @@ public class Questionario {
 				String numeracao = questoes.get("Numeracao");
 				
 				if(um.equals(nivel)){
-					System.out.println(nivel + " : " + pergunta + " : " +resposta1 +" : " + resposta2 + " : " +resposta3 + " : " +resposta4 + " : " +respostaCerta +" : " + valor +" : " + numeracao);
-					//Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCerta,valor,numeracao);
-					//listaQuestoes.add(questao);
+					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCerta,valor,numeracao);
+					listaQuestoes.add(questao);
 					
 				}
 				if(dois.equals(nivel)){
-					System.out.println(nivel + " : " + pergunta + " : " +resposta1 +" : " + resposta2 + " : " +resposta3 + " : " +resposta4 + " : " +respostaCerta +" : " + valor +" : " + numeracao);
-					//Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCerta,valor,numeracao);
-					//listaQuestoes2.add(questao);
+					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCerta,valor,numeracao);
+					listaQuestoes2.add(questao);
 				}
 				if(tres.equals(nivel)){
-					
-					//Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCerta,valor,numeracao);
-					//listaQuestoes3.add(questao);
+					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCerta,valor,numeracao);
+					listaQuestoes3.add(questao);
 					
 				}
 				if(quatro.equals(nivel)){
-					
-					//Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCerta,valor,numeracao);
-					//listaQuestoes4.add(questao);
+					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCerta,valor,numeracao);
+					listaQuestoes4.add(questao);
 				}
 			}
 	

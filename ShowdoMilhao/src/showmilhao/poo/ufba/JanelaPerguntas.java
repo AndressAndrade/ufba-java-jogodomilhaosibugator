@@ -33,6 +33,8 @@ public class JanelaPerguntas implements ActionListener  {
 	static int acertos2 = 1;
 	static int acertos3 = 1;
 	
+	
+	/*
 	static List<Questao> listaQuestoes = new ArrayList();
 	static List<Questao> listaQuestoes2 = new ArrayList();
 	static List<Questao> listaQuestoes3 = new ArrayList();
@@ -383,7 +385,7 @@ public class JanelaPerguntas implements ActionListener  {
 		Collections.shuffle(listaQuestoes);
 		Collections.shuffle(listaQuestoes2);
 		Collections.shuffle(listaQuestoes3);
-		Collections.shuffle(listaQuestoes4);
+		Collections.shuffle(listaQuestoes4);  */
 		
 		//janelas de perguntas
 		new JanelaPerguntas();
