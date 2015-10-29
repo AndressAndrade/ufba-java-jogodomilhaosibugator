@@ -37,26 +37,26 @@ public class Questionario {
 				String resposta2 = questoes.get("Resposta2");
 				String resposta3 = questoes.get("Resposta3");
 				String resposta4 = questoes.get("Resposta4");
-				String respostaCerta = questoes.get("RespostaCerta");
+				String respostaCorreta = questoes.get("RespostaCerta");
 				String valor = questoes.get("Valor");
 				String numeracao = questoes.get("Numeracao");
 				
 				if(um.equals(nivel)){
-					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCerta,valor,numeracao);
+					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCorreta,valor,numeracao);
 					listaQuestoes.add(questao);
 					
 				}
 				if(dois.equals(nivel)){
-					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCerta,valor,numeracao);
+					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCorreta,valor,numeracao);
 					listaQuestoes2.add(questao);
 				}
 				if(tres.equals(nivel)){
-					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCerta,valor,numeracao);
+					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCorreta,valor,numeracao);
 					listaQuestoes3.add(questao);
 					
 				}
 				if(quatro.equals(nivel)){
-					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCerta,valor,numeracao);
+					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCorreta,valor,numeracao);
 					listaQuestoes4.add(questao);
 				}
 			}
@@ -74,5 +74,18 @@ public class Questionario {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		
+		//Teste
+		Questao questao = Questionario.listaQuestoes.get(0);
+		System.out.println(questao.nivel);
+		System.out.println(questao.pergunta);
+		System.out.println(questao.resposta1);
+		System.out.println(questao.resposta2);
+		System.out.println(questao.resposta3);
+		System.out.println(questao.resposta4);
+		System.out.println(questao.respostaCorreta);
+		System.out.println(questao.valor);
+		System.out.println(questao.numeracao);
 	}
 }

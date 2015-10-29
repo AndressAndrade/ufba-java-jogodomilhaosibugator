@@ -29,9 +29,9 @@ public class Questao {
 		
 	}
 	//List<String> respostas
-	public Questao(String pergunta, String resposta1,String resposta2,String resposta3,String resposta4,
-			String respostaCorreta, String nivel, String valor, String numeracao) {
+	public Questao(String nivel,String pergunta,String resposta1,String resposta2,String resposta3,String resposta4,String respostaCorreta,String valor,String numeracao) {
 		super();
+		this.nivel = nivel;
 		this.pergunta = pergunta;
 		//this.respostas = respostas;
 		this.resposta1 = resposta1;
@@ -39,7 +39,6 @@ public class Questao {
 		this.resposta3 = resposta3;
 		this.resposta4 = resposta4;
 		this.respostaCorreta = respostaCorreta;
-		this.nivel = nivel;
 		this.valor = valor;
 		this.numeracao = numeracao;
 	}
