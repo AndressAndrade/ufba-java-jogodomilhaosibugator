@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/im/Downloads/javacsv.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Fernanda Barros/git/JMS9192/JogoDoMilhaoSibugator/Biblioteca/javacsv.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

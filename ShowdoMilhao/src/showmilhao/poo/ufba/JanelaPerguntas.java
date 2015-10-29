@@ -38,13 +38,14 @@ public class JanelaPerguntas implements ActionListener  {
 	static List<Questao> listaQuestoes = new ArrayList();
 	static List<Questao> listaQuestoes2 = new ArrayList();
 	static List<Questao> listaQuestoes3 = new ArrayList();
-	static List<Questao> listaQuestoes4 = new ArrayList();
+	static List<Questao> listaQuestoes4 = new ArrayList(); */
 	
 	public static void main(String[] args) {
 		
 		//um molde de 10 perguntas aleatórias -> falta inserir os dados
 		
 		//perguntas nível 1
+		/*
 		List<String> rq1 = new ArrayList<String>();
 		Questao q1 = new Questao("n1 - Qual era a cor do cavalo branco de Napoleão?", rq1, "azul", 1, 1000, 1);
 		rq1.add("branco");
@@ -407,9 +408,10 @@ public class JanelaPerguntas implements ActionListener  {
 		if (acertos == 15) {
 			setarCaixa(4);
 		}
-		
+
 		
 	}
+	
 	
 	
 	public JanelaPerguntas(){
@@ -476,51 +478,63 @@ public class JanelaPerguntas implements ActionListener  {
 		public static void setarCaixa(int nivel) {
 			
 			if (nivel == 1) {
-				Questao questao = listaQuestoes.get(0);
-				List <String> respostas = questao.respostas;
+				Questao questao = Questionario.listaQuestoes.get(0);
+				String resposta1 = questao.resposta1;
+				String resposta2 = questao.resposta2;
+				String resposta3 = questao.resposta3;
+				String resposta4 = questao.resposta4;
 				String respostaCorreta = questao.respostaCorreta;
 				
 				pergunta.setText(questao.pergunta);
-				res[0].setText(respostas.get(0));
-				res[1].setText(respostas.get(1));
-				res[2].setText(respostas.get(2));
-				res[3].setText(respostas.get(3));
+				res[0].setText(resposta1);
+				res[1].setText(resposta2);
+				res[2].setText(resposta3);
+				res[3].setText(resposta4);
 			}
 			
 			if (nivel == 2) {
-				Questao questao = listaQuestoes2.get(0);
-				List <String> respostas = questao.respostas;
+				Questao questao = Questionario.listaQuestoes2.get(0);
+				String resposta1 = questao.resposta1;
+				String resposta2 = questao.resposta2;
+				String resposta3 = questao.resposta3;
+				String resposta4 = questao.resposta4;
 				String respostaCorreta = questao.respostaCorreta;
 				
 				pergunta.setText(questao.pergunta);
-				res[0].setText(respostas.get(0));
-				res[1].setText(respostas.get(1));
-				res[2].setText(respostas.get(2));
-				res[3].setText(respostas.get(3));
+				res[0].setText(resposta1);
+				res[1].setText(resposta2);
+				res[2].setText(resposta3);
+				res[3].setText(resposta4);
 			}
 			
 			if (nivel == 3) {
-				Questao questao = listaQuestoes3.get(0);
-				List <String> respostas = questao.respostas;
+				Questao questao = Questionario.listaQuestoes3.get(0);
+				String resposta1 = questao.resposta1;
+				String resposta2 = questao.resposta2;
+				String resposta3 = questao.resposta3;
+				String resposta4 = questao.resposta4;
 				String respostaCorreta = questao.respostaCorreta;
-					
+				
 				pergunta.setText(questao.pergunta);
-				res[0].setText(respostas.get(0));
-				res[1].setText(respostas.get(1));
-				res[2].setText(respostas.get(2));
-				res[3].setText(respostas.get(3));
+				res[0].setText(resposta1);
+				res[1].setText(resposta2);
+				res[2].setText(resposta3);
+				res[3].setText(resposta4);
 			}
 			
 			if (nivel == 4) {
-				Questao questao = listaQuestoes4.get(0);
-				List <String> respostas = questao.respostas;
+				Questao questao = Questionario.listaQuestoes4.get(0);
+				String resposta1 = questao.resposta1;
+				String resposta2 = questao.resposta2;
+				String resposta3 = questao.resposta3;
+				String resposta4 = questao.resposta4;
 				String respostaCorreta = questao.respostaCorreta;
-					
+				
 				pergunta.setText(questao.pergunta);
-				res[0].setText(respostas.get(0));
-				res[1].setText(respostas.get(1));
-				res[2].setText(respostas.get(2));
-				res[3].setText(respostas.get(3));
+				res[0].setText(resposta1);
+				res[1].setText(resposta2);
+				res[2].setText(resposta3);
+				res[3].setText(resposta4);
 			}
 		}
 		
@@ -528,22 +542,22 @@ public class JanelaPerguntas implements ActionListener  {
 		public static void setarQuestao(int nivel) {
 			
 			if (nivel == 1) {
-				listaQuestoes.remove(0);
+				Questionario.listaQuestoes.remove(0);
 				setarCaixa(1);
 			}
 			
 			if (nivel == 2) {
-				listaQuestoes2.remove(0);
+				Questionario.listaQuestoes2.remove(0);
 				setarCaixa(2);
 			}
 			
 			if (nivel == 3) {
-				listaQuestoes3.remove(0);
+				Questionario.listaQuestoes3.remove(0);
 				setarCaixa(3);
 			}
 			
 			if (nivel == 4) {
-				listaQuestoes4.remove(0);
+				Questionario.listaQuestoes4.remove(0);
 				pulos.setText("Pergunta Final");
 				setarCaixa(4);
 			}
@@ -637,21 +651,21 @@ public class JanelaPerguntas implements ActionListener  {
 			//Tratamento de eventos dos botões de resposta
 			if (e.getSource() == res[0]) {
 				
-				if (res[0].getText() == obterRespostaCorreta(listaQuestoes.get(0))) {
+				if (res[0].getText() == obterRespostaCorreta(Questionario.listaQuestoes.get(0))) {
 					JOptionPane.showMessageDialog(null, "Acertou", "Parabéns!", JOptionPane.INFORMATION_MESSAGE);
 					
 					if (acertos < 5) {
 						setarQuestao(1);
 						int dinheiro = acertos * 1000;
 						acumular.setText("Acumulado: R$" + dinheiro + ",00");
-						Questao questao = listaQuestoes.get(0);
-						int valor = questao.getValor();
+						Questao questao = Questionario.listaQuestoes.get(0);
+						String valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
 					}
 					if (acertos >= 5 && acertos < 10) {
 						setarQuestao(2);
-						Questao questao = listaQuestoes2.get(0);
-						int valor = questao.getValor();
+						Questao questao = Questionario.listaQuestoes2.get(0);
+						String valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
 						
 						if (acertos == 5) {
@@ -668,8 +682,8 @@ public class JanelaPerguntas implements ActionListener  {
 					}
 					if (acertos >= 10 && acertos < 15) {
 						setarQuestao(3);
-						Questao questao = listaQuestoes3.get(0);
-						int valor = questao.getValor();
+						Questao questao = Questionario.listaQuestoes3.get(0);
+						String valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
 						
 						if (acertos == 10) {
@@ -733,21 +747,21 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			if (e.getSource() == res[1]) {
 				
-				if (res[1].getText() == obterRespostaCorreta(listaQuestoes.get(0))) {
+				if (res[1].getText() == obterRespostaCorreta(Questionario.listaQuestoes.get(0))) {
 					JOptionPane.showMessageDialog(null, "Acertou", "Parabéns!", JOptionPane.INFORMATION_MESSAGE);
 					
 					if (acertos < 5) {
 						setarQuestao(1);
 						int dinheiro = acertos * 1000;
 						acumular.setText("Acumulado: R$" + dinheiro + ",00");
-						Questao questao = listaQuestoes.get(0);
-						int valor = questao.getValor();
+						Questao questao = Questionario.listaQuestoes.get(0);
+						String valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
 					}
 					if (acertos >= 5 && acertos < 10) {
 						setarQuestao(2);
-						Questao questao = listaQuestoes2.get(0);
-						int valor = questao.getValor();
+						Questao questao = Questionario.listaQuestoes2.get(0);
+						String valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
 						
 						if (acertos == 5) {
@@ -762,8 +776,8 @@ public class JanelaPerguntas implements ActionListener  {
 					}
 					if (acertos >= 10 && acertos < 15) {
 						setarQuestao(3);
-						Questao questao = listaQuestoes3.get(0);
-						int valor = questao.getValor();
+						Questao questao = Questionario.listaQuestoes3.get(0);
+						String valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
 						
 						if (acertos == 10) {
@@ -827,21 +841,21 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			if (e.getSource() == res[2]) {
 				
-				if (res[2].getText() == obterRespostaCorreta(listaQuestoes.get(0))) {
+				if (res[2].getText() == obterRespostaCorreta(Questionario.listaQuestoes.get(0))) {
 					JOptionPane.showMessageDialog(null, "Acertou", "Parabéns!", JOptionPane.INFORMATION_MESSAGE);
 
 					if (acertos < 5) {
 						setarQuestao(1);
 						int dinheiro = acertos * 1000;
 						acumular.setText("Acumulado: R$" + dinheiro + ",00");
-						Questao questao = listaQuestoes.get(0);
-						int valor = questao.getValor();
+						Questao questao = Questionario.listaQuestoes.get(0);
+						String valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
 					}
 					if (acertos >= 5 && acertos < 10) {
 						setarQuestao(2);
-						Questao questao = listaQuestoes2.get(0);
-						int valor = questao.getValor();
+						Questao questao = Questionario.listaQuestoes2.get(0);
+						String valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
 						
 						if (acertos == 5) {
@@ -856,8 +870,8 @@ public class JanelaPerguntas implements ActionListener  {
 					}
 					if (acertos >= 10 && acertos < 15) {
 						setarQuestao(3);
-						Questao questao = listaQuestoes3.get(0);
-						int valor = questao.getValor();
+						Questao questao = Questionario.listaQuestoes3.get(0);
+						String valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
 						
 						if (acertos == 10) {
@@ -922,21 +936,21 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			if (e.getSource() == res[3]) {
 				
-				if (res[3].getText() == obterRespostaCorreta(listaQuestoes.get(0))) {
+				if (res[3].getText() == obterRespostaCorreta(Questionario.listaQuestoes.get(0))) {
 					JOptionPane.showMessageDialog(null, "Acertou", "Parabéns!", JOptionPane.INFORMATION_MESSAGE);
 					
 					if (acertos < 5) {
 						setarQuestao(1);
 						int dinheiro = acertos * 1000;
 						acumular.setText("Acumulado: R$" + dinheiro + ",00");
-						Questao questao = listaQuestoes.get(0);
-						int valor = questao.getValor();
+						Questao questao = Questionario.listaQuestoes.get(0);
+						String valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
 					}
 					if (acertos >= 5 && acertos < 10) {
 						setarQuestao(2);
-						Questao questao = listaQuestoes2.get(0);
-						int valor = questao.getValor();
+						Questao questao = Questionario.listaQuestoes2.get(0);
+						String valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
 						
 						if (acertos == 5) {
@@ -951,8 +965,8 @@ public class JanelaPerguntas implements ActionListener  {
 					}
 					if (acertos >= 10 && acertos < 15) {
 						setarQuestao(3);
-						Questao questao = listaQuestoes3.get(0);
-						int valor = questao.getValor();
+						Questao questao = Questionario.listaQuestoes3.get(0);
+						String valor = questao.getValor();
 						acertar.setText("Acerto: R$:"+ valor + ",00");
 						
 						if (acertos == 10) {
