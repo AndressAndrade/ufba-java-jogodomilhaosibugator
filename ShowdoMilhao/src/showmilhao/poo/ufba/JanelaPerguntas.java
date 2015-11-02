@@ -389,6 +389,8 @@ public class JanelaPerguntas implements ActionListener  {
 		Collections.shuffle(listaQuestoes4);  */
 		
 		//janelas de perguntas
+		
+		Questionario.readQuestionario();
 		new JanelaPerguntas();
 		
 		//invocando as perguntas p/ o 1º nível - necessário 5 acertos
