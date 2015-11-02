@@ -476,68 +476,37 @@ public class JanelaPerguntas implements ActionListener  {
 	}
 
 	
-	//função para setar as perguntas na JanelaPerguntas
+	public static Questao setQuestaoByNivel (int nivel) {
+		Questao questao = new Questao();
+	
+		if (nivel == 1) {
+			questao = Questionario.listaQuestoes.get(0);
+		}
+		if (nivel == 2) {
+			questao = Questionario.listaQuestoes2.get(0);
+		}
+		if (nivel == 3) {
+			questao = Questionario.listaQuestoes3.get(0);
+		}
+		if (nivel == 4) {
+			questao = Questionario.listaQuestoes4.get(0);
+		}
+		
+		return questao;
+	}
+	
+	
+		//função para setar as perguntas na JanelaPerguntas
 		public static void setarCaixa(int nivel) {
 			
-			if (nivel == 1) {
-				Questao questao = Questionario.listaQuestoes.get(0);
-				String resposta1 = questao.resposta1;
-				String resposta2 = questao.resposta2;
-				String resposta3 = questao.resposta3;
-				String resposta4 = questao.resposta4;
-				String respostaCorreta = questao.respostaCorreta;
-				
-				pergunta.setText(questao.pergunta);
-				res[0].setText(resposta1);
-				res[1].setText(resposta2);
-				res[2].setText(resposta3);
-				res[3].setText(resposta4);
-			}
+				Questao questao = setQuestaoByNivel(nivel); 
 			
-			if (nivel == 2) {
-				Questao questao = Questionario.listaQuestoes2.get(0);
-				String resposta1 = questao.resposta1;
-				String resposta2 = questao.resposta2;
-				String resposta3 = questao.resposta3;
-				String resposta4 = questao.resposta4;
-				String respostaCorreta = questao.respostaCorreta;
-				
 				pergunta.setText(questao.pergunta);
-				res[0].setText(resposta1);
-				res[1].setText(resposta2);
-				res[2].setText(resposta3);
-				res[3].setText(resposta4);
-			}
+				res[0].setText(questao.resposta1);
+				res[1].setText(questao.resposta2);
+				res[2].setText(questao.resposta3);
+				res[3].setText(questao.resposta4);
 			
-			if (nivel == 3) {
-				Questao questao = Questionario.listaQuestoes3.get(0);
-				String resposta1 = questao.resposta1;
-				String resposta2 = questao.resposta2;
-				String resposta3 = questao.resposta3;
-				String resposta4 = questao.resposta4;
-				String respostaCorreta = questao.respostaCorreta;
-				
-				pergunta.setText(questao.pergunta);
-				res[0].setText(resposta1);
-				res[1].setText(resposta2);
-				res[2].setText(resposta3);
-				res[3].setText(resposta4);
-			}
-			
-			if (nivel == 4) {
-				Questao questao = Questionario.listaQuestoes4.get(0);
-				String resposta1 = questao.resposta1;
-				String resposta2 = questao.resposta2;
-				String resposta3 = questao.resposta3;
-				String resposta4 = questao.resposta4;
-				String respostaCorreta = questao.respostaCorreta;
-				
-				pergunta.setText(questao.pergunta);
-				res[0].setText(resposta1);
-				res[1].setText(resposta2);
-				res[2].setText(resposta3);
-				res[3].setText(resposta4);
-			}
 		}
 		
 		//além de setar a caixa, remove a questão que foi utilizada, evitando repetição
