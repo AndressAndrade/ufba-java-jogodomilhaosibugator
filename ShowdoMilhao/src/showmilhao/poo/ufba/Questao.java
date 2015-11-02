@@ -55,10 +55,6 @@ public class Questao {
 		this.numeracao = numeracao;
 	}
 	
-	public Questao() {
-		
-	}
-	
 	public String getPergunta() {
 		return pergunta;
 	}

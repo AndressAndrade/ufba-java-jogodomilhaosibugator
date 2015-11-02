@@ -499,17 +499,46 @@ public class JanelaPerguntas implements ActionListener  {
 		//função para setar as perguntas na JanelaPerguntas
 		public static void setarCaixa(int nivel) {
 			
-				Questao questao = setQuestaoByNivel(nivel); 
+			Questao questao = setQuestaoByNivel(nivel); 
 			
-				pergunta.setText(questao.pergunta);
-				res[0].setText(questao.resposta1);
-				res[1].setText(questao.resposta2);
-				res[2].setText(questao.resposta3);
-				res[3].setText(questao.resposta4);
+			pergunta.setText(questao.pergunta);
+			res[0].setText(questao.resposta1);
+			res[1].setText(questao.resposta2);
+			res[2].setText(questao.resposta3);
+			res[3].setText(questao.resposta4);
 			
 		}
 		
+		
+		//novo m�todo auxiliar
+		public static void removerQuestao (int nivel) {
+			if (nivel == 1) {
+				Questionario.listaQuestoes.remove(0);
+			}
+			
+			if (nivel == 2) {
+				Questionario.listaQuestoes2.remove(0);
+			}
+			
+			if (nivel == 3) {
+				Questionario.listaQuestoes3.remove(0);
+			}
+			
+			if (nivel == 4) {
+				Questionario.listaQuestoes4.remove(0);
+				pulos.setText("Pergunta Final");
+			}
+		}
+		
+		
+		public static void setarQuestao(int nivel) {
+			removerQuestao(nivel);
+			setarCaixa(nivel);
+		}
+		
+		
 		//além de setar a caixa, remove a questão que foi utilizada, evitando repetição
+		/*
 		public static void setarQuestao(int nivel) {
 			
 			if (nivel == 1) {
@@ -533,6 +562,7 @@ public class JanelaPerguntas implements ActionListener  {
 				setarCaixa(4);
 			}
 		}
+		*/
 		
 		
 		public String obterRespostaCorreta(Questao questao) {
