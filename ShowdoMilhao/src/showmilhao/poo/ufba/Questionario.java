@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.csvreader.CsvReader;
 
+
 public class Questionario {
 	
 	static List<Questao> listaQuestoes = new ArrayList<Questao>();
@@ -61,7 +62,7 @@ public class Questionario {
 				}
 			}
 	
-			//embaralhando a lista de Questões
+			//embaralhando a lista de Questï¿½es
 			Collections.shuffle(listaQuestoes);
 			Collections.shuffle(listaQuestoes2);
 			Collections.shuffle(listaQuestoes3);
@@ -123,7 +124,7 @@ public class Questionario {
 				}
 			}
 	
-			//embaralhando a lista de Questões
+			//embaralhando a lista de Questï¿½es
 			Collections.shuffle(listaQuestoes);
 			Collections.shuffle(listaQuestoes2);
 			Collections.shuffle(listaQuestoes3);
