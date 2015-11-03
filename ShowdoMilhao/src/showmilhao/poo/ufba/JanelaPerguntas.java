@@ -6,9 +6,7 @@ import javax.swing.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Collections;
-import java.util.List;
-import java.util.ArrayList;
+
 
 public class JanelaPerguntas implements ActionListener  {
 
@@ -33,6 +31,7 @@ public class JanelaPerguntas implements ActionListener  {
 	static int acertos2 = 1;
 	static int acertos3 = 1;
 	
+	String	certo;
 	
 	/*
 	static List<Questao> listaQuestoes = new ArrayList();
@@ -42,358 +41,24 @@ public class JanelaPerguntas implements ActionListener  {
 	
 	public static void main(String[] args) {
 		
-		//um molde de 10 perguntas aleat√≥rias -> falta inserir os dados
+		//um molde de 10 perguntas aleatÛrias -> falta inserir os dados
 		
-		//perguntas n√≠vel 1
+		//perguntas nÌvel 1
 		/*
 		List<String> rq1 = new ArrayList<String>();
-		Questao q1 = new Questao("n1 - Qual era a cor do cavalo branco de Napole√£o?", rq1, "azul", 1, 1000, 1);
+		Questao q1 = new Questao("n1 - Qual era a cor do cavalo branco de Napole„o?", rq1, "azul", 1, 1000, 1);
 		rq1.add("branco");
 		rq1.add("azul");
 		rq1.add("amarelo");
 		rq1.add("preto");
-		
-		List<String> rq2 = new ArrayList<String>();
-		Questao q2 = new Questao("n1 - pergunta2", rq2, "c", 1, 1000, 2);
-		rq2.add("e");
-		rq2.add("e");
-		rq2.add("c");
-		rq2.add("e");
-		
-		List<String> rq3 = new ArrayList<String>();
-		Questao q3 = new Questao("n1 - pergunta3", rq3, "c", 1, 1000, 3);
-		rq3.add("c");
-		rq3.add("e");
-		rq3.add("e");
-		rq3.add("e");
-		
-		List<String> rq4 = new ArrayList<String>();
-		Questao q4 = new Questao("n1 - pergunta4", rq4, "c", 1, 1000, 4);
-		rq4.add("e");
-		rq4.add("c");
-		rq4.add("e");
-		rq4.add("e");
-		
-		List<String> rq5 = new ArrayList<String>();
-		Questao q5 = new Questao("n1 - pergunta5", rq5, "c", 1, 1000, 5);
-		rq5.add("e");
-		rq5.add("e");
-		rq5.add("c");
-		rq5.add("e");
-		
-		List<String> rq6 = new ArrayList<String>();
-		Questao q6 = new Questao("n1 - pergunta6", rq6, "c", 1, 1000, 6);
-		rq6.add("e");
-		rq6.add("e");
-		rq6.add("e");
-		rq6.add("c");
-		
-		List<String> rq7 = new ArrayList<String>();
-		Questao q7 = new Questao("n1 - pergunta7", rq7, "c", 1, 1000, 7);
-		rq7.add("e");
-		rq7.add("e");
-		rq7.add("e");
-		rq7.add("c");
-		
-		List<String> rq8 = new ArrayList<String>();
-		Questao q8 = new Questao("n1 - pergunta8", rq8, "c", 1, 1000, 8);
-		rq8.add("e");
-		rq8.add("e");
-		rq8.add("e");
-		rq8.add("c");
-		
-		List<String> rq9 = new ArrayList<String>();
-		Questao q9 = new Questao("n1 - pergunta9", rq9, "c", 1, 1000, 9);
-		rq9.add("e");
-		rq9.add("e");
-		rq9.add("e");
-		rq9.add("c");
-		
-		List<String> rq10 = new ArrayList<String>();
-		Questao q10 = new Questao("n1 - pergunta10", rq10, "c", 1, 1000, 10);
-		rq10.add("c");
-		rq10.add("e");
-		rq10.add("e");
-		rq10.add("e");
-		
-		
-		//perguntas n√≠vel 2
-		List<String> rt1 = new ArrayList<String>();
-		Questao t1 = new Questao("n2 - pergunta", rt1, "c", 2, 10000, 1);
-		rt1.add("e");
-		rt1.add("c");
-		rt1.add("e");
-		rt1.add("e");
-				
-		List<String> rt2 = new ArrayList<String>();
-		Questao t2 = new Questao("n2 - pergunta2", rt2, "c", 2, 10000, 2);
-		rt2.add("e");
-		rt2.add("e");
-		rt2.add("c");
-		rt2.add("e");
-				
-		List<String> rt3 = new ArrayList<String>();
-		Questao t3 = new Questao("n2 - pergunta3", rt3, "c", 2, 10000, 3);
-		rt3.add("c");
-		rt3.add("e");
-		rt3.add("e");
-		rt3.add("e");
-				
-		List<String> rt4 = new ArrayList<String>();
-		Questao t4 = new Questao("n2 - pergunta4", rt4, "c", 2, 10000, 4);
-		rt4.add("e");
-		rt4.add("c");
-		rt4.add("e");
-		rt4.add("e");
-				
-		List<String> rt5 = new ArrayList<String>();
-		Questao t5 = new Questao("n2 - pergunta5", rt5, "c", 2, 10000, 5);
-		rt5.add("e");
-		rt5.add("e");
-		rt5.add("c");
-		rt5.add("e");
-				
-		List<String> rt6 = new ArrayList<String>();
-		Questao t6 = new Questao("n2 - pergunta6", rt6, "c", 2, 10000, 6);
-		rt6.add("e");
-		rt6.add("e");
-		rt6.add("e");
-		rt6.add("c");
-				
-		List<String> rt7 = new ArrayList<String>();
-		Questao t7 = new Questao("n2 - pergunta7", rt7, "c", 2, 10000, 7);
-		rt7.add("e");
-		rt7.add("e");
-		rt7.add("e");
-		rt7.add("c");
-				
-		List<String> rt8 = new ArrayList<String>();
-		Questao t8 = new Questao("n2 - pergunta8", rt8, "c", 2, 10000, 8);
-		rt8.add("e");
-		rt8.add("e");
-		rt8.add("e");
-		rt8.add("c");
-				
-		List<String> rt9 = new ArrayList<String>();
-		Questao t9 = new Questao("n2 - pergunta9", rt9, "c", 2, 10000, 9);
-		rt9.add("e");
-		rt9.add("e");
-		rt9.add("e");
-		rt9.add("c");
-				
-		List<String> rt10 = new ArrayList<String>();
-		Questao t10 = new Questao("n2 - pergunta10", rt10, "c", 2, 10000, 10);
-		rt10.add("c");
-		rt10.add("e");
-		rt10.add("e");
-		rt10.add("e");
-		
-		
-		//perguntas n√≠vel 3
-		List<String> rl1 = new ArrayList<String>();
-		Questao l1 = new Questao("n3 - pergunta", rl1, "c", 3, 100000, 1);
-		rl1.add("e");
-		rl1.add("c");
-		rl1.add("e");
-		rl1.add("e");
-				
-		List<String> rl2 = new ArrayList<String>();
-		Questao l2 = new Questao("n3 - pergunta2", rl2, "c", 3, 100000, 2);
-		rl2.add("e");
-		rl2.add("e");
-		rl2.add("c");
-		rl2.add("e");
-				
-		List<String> rl3 = new ArrayList<String>();
-		Questao l3 = new Questao("n3 - pergunta3", rl3, "c", 3, 100000, 3);
-		rl3.add("c");
-		rl3.add("e");
-		rl3.add("e");
-		rl3.add("e");
-				
-		List<String> rl4 = new ArrayList<String>();
-		Questao l4 = new Questao("n3 - pergunta4", rl4, "c", 3, 100000, 4);
-		rl4.add("e");
-		rl4.add("c");
-		rl4.add("e");
-		rl4.add("e");
-				
-		List<String> rl5 = new ArrayList<String>();
-		Questao l5 = new Questao("n3 - pergunta5", rl5, "c", 3, 100000, 5);
-		rl5.add("e");
-		rl5.add("e");
-		rl5.add("c");
-		rl5.add("e");
-				
-		List<String> rl6 = new ArrayList<String>();
-		Questao l6 = new Questao("n3 - pergunta6", rl6, "c", 3, 100000, 6);
-		rl6.add("e");
-		rl6.add("e");
-		rl6.add("e");
-		rl6.add("c");
-				
-		List<String> rl7 = new ArrayList<String>();
-		Questao l7 = new Questao("n3 - pergunta7", rl7, "c", 3, 100000, 7);
-		rl7.add("e");
-		rl7.add("e");
-		rl7.add("e");
-		rl7.add("c");
-				
-		List<String> rl8 = new ArrayList<String>();
-		Questao l8 = new Questao("n3 - pergunta8", rl8, "c", 3, 100000, 8);
-		rl8.add("e");
-		rl8.add("e");
-		rl8.add("e");
-		rl8.add("c");
-				
-		List<String> rl9 = new ArrayList<String>();
-		Questao l9 = new Questao("n3 - pergunta9", rl9, "c", 3, 100000, 9);
-		rl9.add("e");
-		rl9.add("e");
-		rl9.add("e");
-		rl9.add("c");
-				
-		List<String> rl10 = new ArrayList<String>();
-		Questao l10 = new Questao("n3 - pergunta10", rl10, "c", 3, 100000, 10);
-		rl10.add("c");
-		rl10.add("e");
-		rl10.add("e");
-		rl10.add("e");
-		
-		
-		//perguntas finais
-		List<String> rf1 = new ArrayList<String>();
-		Questao f1 = new Questao("final - pergunta", rf1, "c", 4, 1000000, 1);
-		rf1.add("e");
-		rf1.add("c");
-		rf1.add("e");
-		rf1.add("e");
-				
-		List<String> rf2 = new ArrayList<String>();
-		Questao f2 = new Questao("final - pergunta2", rf2, "c", 4, 1000000, 2);
-		rf2.add("e");
-		rf2.add("e");
-		rf2.add("c");
-		rf2.add("e");
-				
-		List<String> rf3 = new ArrayList<String>();
-		Questao f3 = new Questao("final - pergunta3", rf3, "c", 4, 1000000, 3);
-		rf3.add("c");
-		rf3.add("e");
-		rf3.add("e");
-		rf3.add("e");
-				
-		List<String> rf4 = new ArrayList<String>();
-		Questao f4 = new Questao("final - pergunta4", rf4, "c", 4, 1000000, 4);
-		rf4.add("e");
-		rf4.add("c");
-		rf4.add("e");
-		rf4.add("e");
-				
-		List<String> rf5 = new ArrayList<String>();
-		Questao f5 = new Questao("final - pergunta5", rf5, "c", 4, 1000000, 5);
-		rf5.add("e");
-		rf5.add("e");
-		rf5.add("c");
-		rf5.add("e");
-				
-		List<String> rf6 = new ArrayList<String>();
-		Questao f6 = new Questao("final - pergunta6", rf6, "c", 4, 1000000, 6);
-		rf6.add("e");
-		rf6.add("e");
-		rf6.add("e");
-		rf6.add("c");
-				
-		List<String> rf7 = new ArrayList<String>();
-		Questao f7 = new Questao("final - pergunta7", rf7, "c", 4, 1000000, 7);
-		rf7.add("e");
-		rf7.add("e");
-		rf7.add("e");
-		rf7.add("c");
-				
-		List<String> rf8 = new ArrayList<String>();
-		Questao f8 = new Questao("final - pergunta8", rf8, "c", 4, 1000000, 8);
-		rf8.add("e");
-		rf8.add("e");
-		rf8.add("e");
-		rf8.add("c");
-				
-		List<String> rf9 = new ArrayList<String>();
-		Questao f9 = new Questao("final - pergunta9", rf9, "c", 4, 1000000, 9);
-		rf9.add("e");
-		rf9.add("e");
-		rf9.add("e");
-		rf9.add("c");
-				
-		List<String> rf10 = new ArrayList<String>();
-		Questao f10 = new Questao("final - pergunta10", rf10, "c", 4, 1000000, 10);
-		rf10.add("c");
-		rf10.add("e");
-		rf10.add("e");
-		rf10.add("e");
-		
-		//Criando listas p/ embaralhar as quest√µes
-		//lista de quest√µes n√≠vel 1
-		listaQuestoes.add(q1);
-		listaQuestoes.add(q2);
-		listaQuestoes.add(q3);
-		listaQuestoes.add(q4);
-		listaQuestoes.add(q5);
-		listaQuestoes.add(q6);
-		listaQuestoes.add(q7);
-		listaQuestoes.add(q8);
-		listaQuestoes.add(q9);
-		listaQuestoes.add(q10);
-		
-		//lista de quest√µes n√≠vel 2
-		listaQuestoes2.add(t1);
-		listaQuestoes2.add(t2);
-		listaQuestoes2.add(t3);
-		listaQuestoes2.add(t4);
-		listaQuestoes2.add(t5);
-		listaQuestoes2.add(t6);
-		listaQuestoes2.add(t7);
-		listaQuestoes2.add(t8);
-		listaQuestoes2.add(t9);
-		listaQuestoes2.add(t10);
-		
-		//lista de quest√µes n√≠vel 3
-		listaQuestoes3.add(l1);
-		listaQuestoes3.add(l2);
-		listaQuestoes3.add(l3);
-		listaQuestoes3.add(l4);
-		listaQuestoes3.add(l5);
-		listaQuestoes3.add(l6);
-		listaQuestoes3.add(l7);
-		listaQuestoes3.add(l8);
-		listaQuestoes3.add(l9);
-		listaQuestoes3.add(l10);
-		
-		//lista de quest√µes finais
-		listaQuestoes4.add(f1);
-		listaQuestoes4.add(f2);
-		listaQuestoes4.add(f3);
-		listaQuestoes4.add(f4);
-		listaQuestoes4.add(f5);
-		listaQuestoes4.add(f6);
-		listaQuestoes4.add(f7);
-		listaQuestoes4.add(f8);
-		listaQuestoes4.add(f9);
-		listaQuestoes4.add(f10);
-		
-		
-		//embaralhando a lista de Quest√µes
-		Collections.shuffle(listaQuestoes);
-		Collections.shuffle(listaQuestoes2);
-		Collections.shuffle(listaQuestoes3);
-		Collections.shuffle(listaQuestoes4);  */
+		*/
 		
 		//janelas de perguntas
 		
 		Questionario.readQuestionario();
 		new JanelaPerguntas();
 		
-		//invocando as perguntas p/ o 1¬∫ n√≠vel - necess√°rio 5 acertos
+		//invocando as perguntas p/ o 1∫ nÌvel - necess·rio 5 acertos
 		if (acertos < 5) {
 			setarCaixa(1);
 		}
@@ -463,7 +128,7 @@ public class JanelaPerguntas implements ActionListener  {
 		acumular.setBounds(12,350,180,40);
 		w1.getContentPane().add(acumular);
 		
-		pulos = new JLabel ("Voc√™ tem 3 pulos"); 
+		pulos = new JLabel ("VocÍ tem 3 pulos"); 
 		pulos.setBounds(12,380,150,40);
 		w1.getContentPane().add(pulos);
 		
@@ -496,22 +161,23 @@ public class JanelaPerguntas implements ActionListener  {
 	}
 	
 	
-		//fun√ß√£o para setar as perguntas na JanelaPerguntas
+		//funÁ„o para setar as perguntas na JanelaPerguntas
 		public static void setarCaixa(int nivel) {
 			
-			Questao questao = setQuestaoByNivel(nivel); 
+				Questao questao = setQuestaoByNivel(nivel); 
 			
-			pergunta.setText(questao.pergunta);
-			res[0].setText(questao.resposta1);
-			res[1].setText(questao.resposta2);
-			res[2].setText(questao.resposta3);
-			res[3].setText(questao.resposta4);
-			
+				pergunta.setText(questao.pergunta);
+				res[0].setText(questao.resposta1);
+				res[1].setText(questao.resposta2);
+				res[2].setText(questao.resposta3);
+				res[3].setText(questao.resposta4);
+				
+				
 		}
-		
-		
-		//novo mÈtodo auxiliar
 		public static void removerQuestao (int nivel) {
+			
+		//novo mÈtodo auxiliar
+			
 			if (nivel == 1) {
 				Questionario.listaQuestoes.remove(0);
 			}
@@ -530,39 +196,11 @@ public class JanelaPerguntas implements ActionListener  {
 			}
 		}
 		
-		
+		//alÈm de setar a caixa, remove a quest„o que foi utilizada, evitando repetiÁ„o
 		public static void setarQuestao(int nivel) {
 			removerQuestao(nivel);
 			setarCaixa(nivel);
 		}
-		
-		
-		//al√©m de setar a caixa, remove a quest√£o que foi utilizada, evitando repeti√ß√£o
-		/*
-		public static void setarQuestao(int nivel) {
-			
-			if (nivel == 1) {
-				Questionario.listaQuestoes.remove(0);
-				setarCaixa(1);
-			}
-			
-			if (nivel == 2) {
-				Questionario.listaQuestoes2.remove(0);
-				setarCaixa(2);
-			}
-			
-			if (nivel == 3) {
-				Questionario.listaQuestoes3.remove(0);
-				setarCaixa(3);
-			}
-			
-			if (nivel == 4) {
-				Questionario.listaQuestoes4.remove(0);
-				pulos.setText("Pergunta Final");
-				setarCaixa(4);
-			}
-		}
-		*/
 		
 		
 		public String obterRespostaCorreta(Questao questao) {
@@ -574,31 +212,30 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			if (e.getSource() == parar) {
 				w1.dispose();
-				
 				if (acertos <= 6) {
 					
 					acumulado = (acertos -1) * 1000;
-					JOptionPane.showMessageDialog(null, "Voc√™ acumulou R$:" + acumulado + ",00","Tente de novo!", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "VocÍ acumulou R$:" + acumulado + ",00","Tente de novo!", JOptionPane.INFORMATION_MESSAGE);
 				}
 				
 				if (acertos > 6 && acertos <= 11) {
 
 					acumulado = (acertos2 -1) * 10000;
 					if (acertos == 11) {
-						JOptionPane.showMessageDialog(null, "Voc√™ acumulou R$:50000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "VocÍ acumulou R$:50000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 					}
 					else {
-						JOptionPane.showMessageDialog(null, "Voc√™ acumulou R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "VocÍ acumulou R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				
 				if (acertos > 11 && acertos <= 16) {
 					acumulado = (acertos3 -1) * 100000;
 					if (acertos == 16) {
-						JOptionPane.showMessageDialog(null, "Voc√™ acumulou R$:500.000,00","Muito bem!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "VocÍ acumulou R$:500.000,00","Muito bem!", JOptionPane.INFORMATION_MESSAGE);
 					}
 					else {
-						JOptionPane.showMessageDialog(null, "Voc√™ acumulou R$:" + acumulado + ",00","Muito bem!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "VocÍ acumulou R$:" + acumulado + ",00","Muito bem!", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				
@@ -607,17 +244,16 @@ public class JanelaPerguntas implements ActionListener  {
 			if (e.getSource() == pular) {		
 				
 				if (nDePulos > 0) {
-					//falta inserir o comando para pular
 					nDePulos--;
 					
 					if (acertos < 5) {
 						setarQuestao(1);
 						
 						if (nDePulos != 1) {
-							pulos.setText("Voc√™ tem " + nDePulos + " pulos");
+							pulos.setText("VocÍ tem " + nDePulos + " pulos");
 						}
 						else {
-							pulos.setText("Voc√™ tem " + nDePulos + " pulo");
+							pulos.setText("VocÍ tem " + nDePulos + " pulo");
 						}
 					}
 					
@@ -625,35 +261,36 @@ public class JanelaPerguntas implements ActionListener  {
 						setarQuestao(2);
 						
 						if (nDePulos != 1) {
-							pulos.setText("Voc√™ tem " + nDePulos + " pulos");
+							pulos.setText("VocÍ tem " + nDePulos + " pulos");
 						}
 						else {
-							pulos.setText("Voc√™ tem " + nDePulos + " pulo");
+							pulos.setText("VocÍ tem " + nDePulos + " pulo");
 						}
 					}
 					if (acertos >= 10 && acertos < 15) {
 						setarQuestao(3);
 						
 						if (nDePulos != 1) {
-							pulos.setText("Voc√™ tem " + nDePulos + " pulos");
+							pulos.setText("VocÍ tem " + nDePulos + " pulos");
 						}
 						else {
-							pulos.setText("Voc√™ tem " + nDePulos + " pulo");
+							pulos.setText("VocÍ tem " + nDePulos + " pulo");
 						}
 					}
 					
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Voc√™ n√£o tem mais pulos","Sem recursos!", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "VocÍ n„o tem mais pulos","Sem recursos!", JOptionPane.INFORMATION_MESSAGE);
 				}
 			}
 			
 			
-			//Tratamento de eventos dos bot√µes de resposta
+			//Tratamento de eventos dos botıes de resposta
 			if (e.getSource() == res[0]) {
 				
-				if (res[0].getText() == obterRespostaCorreta(Questionario.listaQuestoes.get(0))) {
-					JOptionPane.showMessageDialog(null, "Acertou", "Parab√©ns!", JOptionPane.INFORMATION_MESSAGE);
+				if (res[0].getText().equals(obterRespostaCorreta(Questionario.listaQuestoes.get(0)))) {
+					
+					JOptionPane.showMessageDialog(null, "Acertou", "ParabÈns!", JOptionPane.INFORMATION_MESSAGE);
 					
 					if (acertos < 5) {
 						setarQuestao(1);
@@ -699,14 +336,14 @@ public class JanelaPerguntas implements ActionListener  {
 					}
 					if (acertos == 15) {
 						setarQuestao(4);
-						acertar.setText("Milh√£o: R$:1.000.000,00");
+						acertar.setText("Milh„o: R$:1.000.000,00");
 						acumular.setText("Acumulado: R$: 500.000,00");
 					}
 					
 					if (acertos == 16) {
 						w1.dispose();
-						JOptionPane.showMessageDialog(null, "Parab√©ns! Voc√™ venceu o Jogo do Milh√£o Sibugator\n" 
-								+ "e ganhou um pr√™mio de R$:1.000.000,00 !!!","Voc√™ joga muito!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ParabÈns! VocÍ venceu o Jogo do Milh„o Sibugator\n" 
+								+ "e ganhou um prÍmio de R$:1.000.000,00 !!!","VocÍ joga muito!", JOptionPane.INFORMATION_MESSAGE);
 							
 					}
 					
@@ -718,7 +355,7 @@ public class JanelaPerguntas implements ActionListener  {
 						
 						acumulado = (acertos -1) * 1000;
 						acumulado /= 2;
-						JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 					}
 					
 					if (acertos > 6 && acertos <= 11) {
@@ -726,10 +363,10 @@ public class JanelaPerguntas implements ActionListener  {
 						acumulado = (acertos2 -1) * 10000;
 						acumulado /= 2;
 						if (acertos == 11) {
-							JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:25000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:25000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 						}
 						else {
-							JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 						}
 					}
 					
@@ -737,10 +374,10 @@ public class JanelaPerguntas implements ActionListener  {
 						acumulado = (acertos3 -1) * 100000;
 						acumulado /= 2;
 						if (acertos == 16) {
-							JOptionPane.showMessageDialog(null, "Voc√™ perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
 						}
 						else {
-							JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 						}
 					}
 				}
@@ -748,8 +385,9 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			if (e.getSource() == res[1]) {
 				
-				if (res[1].getText() == obterRespostaCorreta(Questionario.listaQuestoes.get(0))) {
-					JOptionPane.showMessageDialog(null, "Acertou", "Parab√©ns!", JOptionPane.INFORMATION_MESSAGE);
+				if (res[1].getText().equals(obterRespostaCorreta(Questionario.listaQuestoes.get(0)))) {
+				
+					JOptionPane.showMessageDialog(null, "Acertou", "ParabÈns!", JOptionPane.INFORMATION_MESSAGE);
 					
 					if (acertos < 5) {
 						setarQuestao(1);
@@ -793,14 +431,14 @@ public class JanelaPerguntas implements ActionListener  {
 					}
 					if (acertos == 15) {
 						setarQuestao(4);
-						acertar.setText("Milh√£o: R$:1.000.000,00");
+						acertar.setText("Milh„o: R$:1.000.000,00");
 						acumular.setText("Acumulado: R$: 500.000,00");
 					}
 					
 					if (acertos == 16) {
 						w1.dispose();
-						JOptionPane.showMessageDialog(null, "Parab√©ns! Voc√™ venceu o Jogo do Milh√£o Sibugator\n" 
-								+ "e ganhou um pr√™mio de R$:1.000.000,00 !!!","Voc√™ joga muito!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ParabÈns! VocÍ venceu o Jogo do Milh„o Sibugator\n" 
+								+ "e ganhou um prÍmio de R$:1.000.000,00 !!!","VocÍ joga muito!", JOptionPane.INFORMATION_MESSAGE);
 							
 					}
 					
@@ -812,7 +450,7 @@ public class JanelaPerguntas implements ActionListener  {
 						
 						acumulado = (acertos -1) * 1000;
 						acumulado /= 2;
-						JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 					}
 					
 					if (acertos > 6 && acertos <= 11) {
@@ -820,10 +458,10 @@ public class JanelaPerguntas implements ActionListener  {
 						acumulado = (acertos2 -1) * 10000;
 						acumulado /= 2;
 						if (acertos == 11) {
-							JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:25000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:25000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 						}
 						else {
-							JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 						}
 					}
 					
@@ -831,10 +469,10 @@ public class JanelaPerguntas implements ActionListener  {
 						acumulado = (acertos3 -1) * 100000;
 						acumulado /= 2;
 						if (acertos == 16) {
-							JOptionPane.showMessageDialog(null, "Voc√™ perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
 						}
 						else {
-							JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 						}
 					}
 				}
@@ -842,8 +480,9 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			if (e.getSource() == res[2]) {
 				
-				if (res[2].getText() == obterRespostaCorreta(Questionario.listaQuestoes.get(0))) {
-					JOptionPane.showMessageDialog(null, "Acertou", "Parab√©ns!", JOptionPane.INFORMATION_MESSAGE);
+				if (res[2].getText().equals(obterRespostaCorreta(Questionario.listaQuestoes.get(0)))) {
+			
+					JOptionPane.showMessageDialog(null, "Acertou", "ParabÈns!", JOptionPane.INFORMATION_MESSAGE);
 
 					if (acertos < 5) {
 						setarQuestao(1);
@@ -887,14 +526,14 @@ public class JanelaPerguntas implements ActionListener  {
 					}
 					if (acertos == 15) {
 						setarQuestao(4);
-						acertar.setText("Milh√£o: R$:1.000.000,00");
+						acertar.setText("Milh„o: R$:1.000.000,00");
 						acumular.setText("Acumulado: R$: 500.000,00");
 					}
 					
 					if (acertos == 16) {
 						w1.dispose();
-						JOptionPane.showMessageDialog(null, "Parab√©ns! Voc√™ venceu o Jogo do Milh√£o Sibugator\n" 
-								+ "e ganhou um pr√™mio de R$:1.000.000,00 !!!","Voc√™ joga muito!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ParabÈns! VocÍ venceu o Jogo do Milh„o Sibugator\n" 
+								+ "e ganhou um prÍmio de R$:1.000.000,00 !!!","VocÍ joga muito!", JOptionPane.INFORMATION_MESSAGE);
 							
 					}
 					
@@ -906,7 +545,7 @@ public class JanelaPerguntas implements ActionListener  {
 						
 						acumulado = (acertos -1) * 1000;
 						acumulado /= 2;
-						JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 					}
 					
 					if (acertos > 6 && acertos <= 11) {
@@ -914,10 +553,10 @@ public class JanelaPerguntas implements ActionListener  {
 						acumulado = (acertos2 -1) * 10000;
 						acumulado /= 2;
 						if (acertos == 11) {
-							JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:25000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:25000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 						}
 						else {
-							JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 						}
 					}
 					
@@ -925,10 +564,10 @@ public class JanelaPerguntas implements ActionListener  {
 						acumulado = (acertos3 -1) * 100000;
 						acumulado /= 2;
 						if (acertos == 16) {
-							JOptionPane.showMessageDialog(null, "Voc√™ perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
 						}
 						else {
-							JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 						}
 					}
 					
@@ -937,8 +576,9 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			if (e.getSource() == res[3]) {
 				
-				if (res[3].getText() == obterRespostaCorreta(Questionario.listaQuestoes.get(0))) {
-					JOptionPane.showMessageDialog(null, "Acertou", "Parab√©ns!", JOptionPane.INFORMATION_MESSAGE);
+				if (res[3].getText().equals(obterRespostaCorreta(Questionario.listaQuestoes.get(0)))) {
+		
+					JOptionPane.showMessageDialog(null, "Acertou", "ParabÈns!", JOptionPane.INFORMATION_MESSAGE);
 					
 					if (acertos < 5) {
 						setarQuestao(1);
@@ -982,14 +622,14 @@ public class JanelaPerguntas implements ActionListener  {
 					}
 					if (acertos == 15) {
 						setarQuestao(4);
-						acertar.setText("Milh√£o: R$:1.000.000,00");
+						acertar.setText("Milh„o: R$:1.000.000,00");
 						acumular.setText("Acumulado: R$: 500.000,00");
 					}
 					
 					if (acertos == 16) {
 						w1.dispose();
-						JOptionPane.showMessageDialog(null, "Parab√©ns! Voc√™ venceu o Jogo do Milh√£o Sibugator\n" 
-								+ "e ganhou um pr√™mio de R$:1.000.000,00 !!!","Voc√™ joga muito!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ParabÈns! VocÍ venceu o Jogo do Milh„o Sibugator\n" 
+								+ "e ganhou um prÍmio de R$:1.000.000,00 !!!","VocÍ joga muito!", JOptionPane.INFORMATION_MESSAGE);
 							
 					}
 					
@@ -1001,7 +641,7 @@ public class JanelaPerguntas implements ActionListener  {
 						
 						acumulado = (acertos -1) * 1000;
 						acumulado /= 2;
-						JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 					}
 					
 					if (acertos > 6 && acertos <= 11) {
@@ -1009,10 +649,10 @@ public class JanelaPerguntas implements ActionListener  {
 						acumulado = (acertos2 -1) * 10000;
 						acumulado /= 2;
 						if (acertos == 11) {
-							JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:25000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:25000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 						}
 						else {
-							JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 						}
 					}
 					
@@ -1020,19 +660,14 @@ public class JanelaPerguntas implements ActionListener  {
 						acumulado = (acertos3 -1) * 100000;
 						acumulado /= 2;
 						if (acertos == 16) {
-							JOptionPane.showMessageDialog(null, "Voc√™ perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
 						}
 						else {
-							JOptionPane.showMessageDialog(null, "Voc√™ errou. Voc√™ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "VocÍ errou. VocÍ leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 						}
 					}
 				}
 			}
-			
-			
-			
-			
 		}
 		
 	}
-	

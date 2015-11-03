@@ -1,8 +1,5 @@
 package showmilhao.poo.ufba;
 
-import java.util.List;
-import java.util.ArrayList;
-
 public class Questao {
 	
 	String pergunta;
@@ -40,12 +37,11 @@ public class Questao {
 		*/
 		
 	}
-	//List<String> respostas
+
 	public Questao(String nivel,String pergunta,String resposta1,String resposta2,String resposta3,String resposta4,String respostaCorreta,String valor,String numeracao) {
 		super();
 		this.nivel = nivel;
 		this.pergunta = pergunta;
-		//this.respostas = respostas;
 		this.resposta1 = resposta1;
 		this.resposta2 = resposta2;
 		this.resposta3 = resposta3;
@@ -62,14 +58,6 @@ public class Questao {
 	public void setPergunta(String pergunta) {
 		this.pergunta = pergunta;
 	}
-
-	/*public List <String> getRespostas() {
-		return respostas;
-	}*/
-
-	/*public void setRespostas(List <String> respostas) {
-		this.respostas = respostas;
-	}*/
 
 	public String getRespostaCorreta() {
 		return respostaCorreta;

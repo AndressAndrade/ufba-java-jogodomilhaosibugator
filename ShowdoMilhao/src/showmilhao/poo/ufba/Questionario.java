@@ -10,10 +10,10 @@ import com.csvreader.CsvReader;
 
 public class Questionario {
 	
-	static List<Questao> listaQuestoes = new ArrayList();
-	static List<Questao> listaQuestoes2 = new ArrayList();
-	static List<Questao> listaQuestoes3 = new ArrayList();
-	static List<Questao> listaQuestoes4 = new ArrayList();
+	static List<Questao> listaQuestoes = new ArrayList<Questao>();
+	static List<Questao> listaQuestoes2 = new ArrayList<Questao>();
+	static List<Questao> listaQuestoes3 = new ArrayList<Questao>();
+	static List<Questao> listaQuestoes4 = new ArrayList<Questao>();
 
 	
 	public static void readQuestionario() {
