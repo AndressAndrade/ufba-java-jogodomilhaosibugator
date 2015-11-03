@@ -4,7 +4,6 @@ public class Questao {
 	
 	String pergunta;
 	
-	//List <String> respostas;
 	String resposta1;
 
 	String resposta2;

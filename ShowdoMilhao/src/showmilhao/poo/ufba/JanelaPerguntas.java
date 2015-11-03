@@ -31,7 +31,7 @@ public class JanelaPerguntas implements ActionListener  {
 	static int acertos2 = 1;
 	static int acertos3 = 1;
 	
-	String	certo;
+	static String certo;
 	
 	/*
 	static List<Questao> listaQuestoes = new ArrayList();
@@ -146,15 +146,19 @@ public class JanelaPerguntas implements ActionListener  {
 	
 		if (nivel == 1) {
 			questao = Questionario.listaQuestoes.get(0);
+			certo = questao.respostaCorreta;
 		}
 		if (nivel == 2) {
 			questao = Questionario.listaQuestoes2.get(0);
+			certo = questao.respostaCorreta;
 		}
 		if (nivel == 3) {
 			questao = Questionario.listaQuestoes3.get(0);
+			certo = questao.respostaCorreta;
 		}
 		if (nivel == 4) {
 			questao = Questionario.listaQuestoes4.get(0);
+			certo = questao.respostaCorreta;
 		}
 		
 		return questao;
@@ -201,10 +205,9 @@ public class JanelaPerguntas implements ActionListener  {
 			setarCaixa(nivel);
 		}
 		
-		
-		public String obterRespostaCorreta(Questao questao) {
-			return questao.respostaCorreta;
-		}
+//		public String obterRespostaCorreta(Questao questao) {
+//			return questao.respostaCorreta;
+//		}
 		
 		
 		public void actionPerformed(ActionEvent e) {
@@ -287,7 +290,7 @@ public class JanelaPerguntas implements ActionListener  {
 			//Tratamento de eventos dos botões de resposta
 			if (e.getSource() == res[0]) {
 				
-				if (res[0].getText().equals(obterRespostaCorreta(Questionario.listaQuestoes.get(0)))) {
+				if (res[0].getText().equals(certo)) {
 					
 					JOptionPane.showMessageDialog(null, "Acertou", "Parabéns!", JOptionPane.INFORMATION_MESSAGE);
 					
@@ -384,7 +387,7 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			if (e.getSource() == res[1]) {
 				
-				if (res[1].getText().equals(obterRespostaCorreta(Questionario.listaQuestoes.get(0)))) {
+				if (res[1].getText().equals(certo)) {
 				
 					JOptionPane.showMessageDialog(null, "Acertou", "Parabéns!", JOptionPane.INFORMATION_MESSAGE);
 					
@@ -479,8 +482,8 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			if (e.getSource() == res[2]) {
 				
-				if (res[2].getText().equals(obterRespostaCorreta(Questionario.listaQuestoes.get(0)))) {
-			
+				if (res[2].getText().equals(certo)) {
+					
 					JOptionPane.showMessageDialog(null, "Acertou", "Parabéns!", JOptionPane.INFORMATION_MESSAGE);
 
 					if (acertos < 5) {
@@ -575,7 +578,7 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			if (e.getSource() == res[3]) {
 				
-				if (res[3].getText().equals(obterRespostaCorreta(Questionario.listaQuestoes.get(0)))) {
+				if (res[3].getText().equals(certo)) {
 		
 					JOptionPane.showMessageDialog(null, "Acertou", "Parabéns!", JOptionPane.INFORMATION_MESSAGE);
 					
