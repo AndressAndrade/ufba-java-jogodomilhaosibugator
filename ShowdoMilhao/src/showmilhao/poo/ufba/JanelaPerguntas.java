@@ -93,7 +93,7 @@ public class JanelaPerguntas implements ActionListener  {
 		w1.getContentPane().setLayout(null);
 		
 		pergunta = new JLabel("Perguntas aqui:");
-		pergunta.setBounds(52,15,300,40);
+		pergunta.setBounds(52,15,300,50);
 		w1.getContentPane().add(pergunta);
 		
 		res[0] = new JButton("	");
@@ -166,12 +166,11 @@ public class JanelaPerguntas implements ActionListener  {
 			
 				Questao questao = setQuestaoByNivel(nivel); 
 			
-				pergunta.setText(questao.pergunta);
+				pergunta.setText("<html> " + questao.pergunta + " </html>");
 				res[0].setText(questao.resposta1);
 				res[1].setText(questao.resposta2);
 				res[2].setText(questao.resposta3);
 				res[3].setText(questao.resposta4);
-				
 				
 		}
 		public static void removerQuestao (int nivel) {
