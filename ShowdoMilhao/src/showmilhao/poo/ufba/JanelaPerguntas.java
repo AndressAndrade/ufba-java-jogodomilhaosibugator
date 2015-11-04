@@ -23,7 +23,7 @@ public class JanelaPerguntas implements ActionListener  {
 	
 	static  JFrame  w1;
 	
-	int nDePulos = 3;
+	static  int nDePulos = 3;
 	static  int dinheiro = 0;
 	static  int acumulado = 0;
 	
@@ -168,13 +168,16 @@ public class JanelaPerguntas implements ActionListener  {
 		//função para setar as perguntas na JanelaPerguntas
 		public static void setarCaixa(int nivel) {
 			
-				Questao questao = setQuestaoByNivel(nivel); 
+			Questao questao = setQuestaoByNivel(nivel); 
 			
-				pergunta.setText("<html> " + questao.pergunta + " </html>");
-				res[0].setText(questao.resposta1);
-				res[1].setText(questao.resposta2);
-				res[2].setText(questao.resposta3);
-				res[3].setText(questao.resposta4);
+			pergunta.setText("<html> " + questao.pergunta + " </html>");
+			res[0].setText(questao.resposta1);
+			res[1].setText(questao.resposta2);
+			res[2].setText(questao.resposta3);
+			res[3].setText(questao.resposta4);
+			
+			//Teste
+			System.out.println(questao.respostaCorreta +  "      " + questao.nivel);
 				
 		}
 		public static void removerQuestao (int nivel) {
@@ -379,7 +382,7 @@ public class JanelaPerguntas implements ActionListener  {
 			}
 			
 			//Tratamento de evento do botão pular
-			if (e.getSource() == pular) {		
+			/*if (e.getSource() == pular) {		
 				
 				if (nDePulos > 0) {
 					nDePulos--;
@@ -419,396 +422,53 @@ public class JanelaPerguntas implements ActionListener  {
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Você não tem mais pulos","Sem recursos!", JOptionPane.INFORMATION_MESSAGE);
-				}
-			}
-			
-			
-			//Tratamento de eventos dos botões de resposta
-			/*
-			if (e.getSource() == res[0]) {
-				
-				if (res[0].getText().equals(certo)) {
-					
-					JOptionPane.showMessageDialog(null, "Acertou", "Parabéns!", JOptionPane.INFORMATION_MESSAGE);
-					
-					if (acertos < 5) {
-						setarQuestao(1);
-						int dinheiro = acertos * 1000;
-						acumular.setText("Acumulado: R$" + dinheiro + ",00");
-						Questao questao = Questionario.listaQuestoes.get(0);
-						String valor = questao.getValor();
-						acertar.setText("Acerto: R$:"+ valor + ",00");
-					}
-					if (acertos >= 5 && acertos < 10) {
-						setarQuestao(2);
-						Questao questao = Questionario.listaQuestoes2.get(0);
-						String valor = questao.getValor();
-						acertar.setText("Acerto: R$:"+ valor + ",00");
-						
-						if (acertos == 5) {
-							acumular.setText("Acumulado: R$:5000,00");
-						}
-						
-						else {
-							int dinheiro = acertos2 * 10000;
-							acumular.setText("Acumulado: R$" + dinheiro + ",00");
-							acertos2++;
-						}
-		
-						
-					}
-					if (acertos >= 10 && acertos < 15) {
-						setarQuestao(3);
-						Questao questao = Questionario.listaQuestoes3.get(0);
-						String valor = questao.getValor();
-						acertar.setText("Acerto: R$:"+ valor + ",00");
-						
-						if (acertos == 10) {
-							acumular.setText("Acumulado: R$:50000,00");
-						}
-						
-						else {
-							int dinheiro = acertos3 * 100000;
-							acumular.setText("Acumulado: R$" + dinheiro + ",00");
-							acertos3++;
-						}
-					}
-					if (acertos == 15) {
-						setarQuestao(4);
-						acertar.setText("Milhão: R$:1.000.000,00");
-						acumular.setText("Acumulado: R$: 500.000,00");
-					}
-					
-					if (acertos == 16) {
-						w1.dispose();
-						JOptionPane.showMessageDialog(null, "Parabéns! Você venceu o Jogo do Milhão Sibugator\n" 
-								+ "e ganhou um prêmio de R$:1.000.000,00 !!!","Você joga muito!", JOptionPane.INFORMATION_MESSAGE);
-							
-					}
-					
-					acertos++;
-				}
-				else {
-					w1.dispose();
-					if (acertos <= 6) {
-						
-						acumulado = (acertos -1) * 1000;
-						acumulado /= 2;
-						JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-					}
-					
-					if (acertos > 6 && acertos <= 11) {
-
-						acumulado = (acertos2 -1) * 10000;
-						acumulado /= 2;
-						if (acertos == 11) {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:25000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-						}
-						else {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-						}
-					}
-					
-					if (acertos > 11 && acertos <= 16) {
-						acumulado = (acertos3 -1) * 100000;
-						acumulado /= 2;
-						if (acertos == 16) {
-							JOptionPane.showMessageDialog(null, "Você perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
-						}
-						else {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-						}
-					}
-				}
-			}
-			
-			if (e.getSource() == res[1]) {
-				
-				if (res[1].getText().equals(certo)) {
-				
-					JOptionPane.showMessageDialog(null, "Acertou", "Parabéns!", JOptionPane.INFORMATION_MESSAGE);
-					
-					if (acertos < 5) {
-						setarQuestao(1);
-						int dinheiro = acertos * 1000;
-						acumular.setText("Acumulado: R$" + dinheiro + ",00");
-						Questao questao = Questionario.listaQuestoes.get(0);
-						String valor = questao.getValor();
-						acertar.setText("Acerto: R$:"+ valor + ",00");
-					}
-					if (acertos >= 5 && acertos < 10) {
-						setarQuestao(2);
-						Questao questao = Questionario.listaQuestoes2.get(0);
-						String valor = questao.getValor();
-						acertar.setText("Acerto: R$:"+ valor + ",00");
-						
-						if (acertos == 5) {
-							acumular.setText("Acumulado: R$:5000,00");
-						}
-						
-						else {
-							int dinheiro = acertos2 * 10000;
-							acumular.setText("Acumulado: R$" + dinheiro + ",00");
-							acertos2++;
-						}
-					}
-					if (acertos >= 10 && acertos < 15) {
-						setarQuestao(3);
-						Questao questao = Questionario.listaQuestoes3.get(0);
-						String valor = questao.getValor();
-						acertar.setText("Acerto: R$:"+ valor + ",00");
-						
-						if (acertos == 10) {
-							acumular.setText("Acumulado: R$:50000,00");
-						}
-						
-						else {
-							int dinheiro = acertos3 * 100000;
-							acumular.setText("Acumulado: R$" + dinheiro + ",00");
-							acertos3++;
-						}
-					}
-					if (acertos == 15) {
-						setarQuestao(4);
-						acertar.setText("Milhão: R$:1.000.000,00");
-						acumular.setText("Acumulado: R$: 500.000,00");
-					}
-					
-					if (acertos == 16) {
-						w1.dispose();
-						JOptionPane.showMessageDialog(null, "Parabéns! Você venceu o Jogo do Milhão Sibugator\n" 
-								+ "e ganhou um prêmio de R$:1.000.000,00 !!!","Você joga muito!", JOptionPane.INFORMATION_MESSAGE);
-							
-					}
-					
-					acertos++;
-				}
-				else {
-					w1.dispose();
-					if (acertos <= 6) {
-						
-						acumulado = (acertos -1) * 1000;
-						acumulado /= 2;
-						JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-					}
-					
-					if (acertos > 6 && acertos <= 11) {
-
-						acumulado = (acertos2 -1) * 10000;
-						acumulado /= 2;
-						if (acertos == 11) {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:25000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-						}
-						else {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-						}
-					}
-					
-					if (acertos > 11 && acertos <= 16) {
-						acumulado = (acertos3 -1) * 100000;
-						acumulado /= 2;
-						if (acertos == 16) {
-							JOptionPane.showMessageDialog(null, "Você perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
-						}
-						else {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-						}
-					}
-				}
-			}
-			
-			if (e.getSource() == res[2]) {
-				
-				if (res[2].getText().equals(certo)) {
-					
-					JOptionPane.showMessageDialog(null, "Acertou", "Parabéns!", JOptionPane.INFORMATION_MESSAGE);
-
-					if (acertos < 5) {
-						setarQuestao(1);
-						int dinheiro = acertos * 1000;
-						acumular.setText("Acumulado: R$" + dinheiro + ",00");
-						Questao questao = Questionario.listaQuestoes.get(0);
-						String valor = questao.getValor();
-						acertar.setText("Acerto: R$:"+ valor + ",00");
-					}
-					if (acertos >= 5 && acertos < 10) {
-						setarQuestao(2);
-						Questao questao = Questionario.listaQuestoes2.get(0);
-						String valor = questao.getValor();
-						acertar.setText("Acerto: R$:"+ valor + ",00");
-						
-						if (acertos == 5) {
-							acumular.setText("Acumulado: R$:5000,00");
-						}
-						
-						else {
-							int dinheiro = acertos2 * 10000;
-							acumular.setText("Acumulado: R$" + dinheiro + ",00");
-							acertos2++;
-						}
-					}
-					if (acertos >= 10 && acertos < 15) {
-						setarQuestao(3);
-						Questao questao = Questionario.listaQuestoes3.get(0);
-						String valor = questao.getValor();
-						acertar.setText("Acerto: R$:"+ valor + ",00");
-						
-						if (acertos == 10) {
-							acumular.setText("Acumulado: R$:50000,00");
-						}
-						
-						else {
-							int dinheiro = acertos3 * 100000;
-							acumular.setText("Acumulado: R$" + dinheiro + ",00");
-							acertos3++;
-						}
-					}
-					if (acertos == 15) {
-						setarQuestao(4);
-						acertar.setText("Milhão: R$:1.000.000,00");
-						acumular.setText("Acumulado: R$: 500.000,00");
-					}
-					
-					if (acertos == 16) {
-						w1.dispose();
-						JOptionPane.showMessageDialog(null, "Parabéns! Você venceu o Jogo do Milhão Sibugator\n" 
-								+ "e ganhou um prêmio de R$:1.000.000,00 !!!","Você joga muito!", JOptionPane.INFORMATION_MESSAGE);
-							
-					}
-					
-					acertos++;
-				}
-				else {
-					w1.dispose();
-					if (acertos <= 6) {
-						
-						acumulado = (acertos -1) * 1000;
-						acumulado /= 2;
-						JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-					}
-					
-					if (acertos > 6 && acertos <= 11) {
-
-						acumulado = (acertos2 -1) * 10000;
-						acumulado /= 2;
-						if (acertos == 11) {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:25000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-						}
-						else {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-						}
-					}
-					
-					if (acertos > 11 && acertos <= 16) {
-						acumulado = (acertos3 -1) * 100000;
-						acumulado /= 2;
-						if (acertos == 16) {
-							JOptionPane.showMessageDialog(null, "Você perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
-						}
-						else {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-						}
-					}
-					
-				}
-			}
-			
-			if (e.getSource() == res[3]) {
-				
-				if (res[3].getText().equals(certo)) {
-		
-					JOptionPane.showMessageDialog(null, "Acertou", "Parabéns!", JOptionPane.INFORMATION_MESSAGE);
-					
-					if (acertos < 5) {
-						setarQuestao(1);
-						int dinheiro = acertos * 1000;
-						acumular.setText("Acumulado: R$" + dinheiro + ",00");
-						Questao questao = Questionario.listaQuestoes.get(0);
-						String valor = questao.getValor();
-						acertar.setText("Acerto: R$:"+ valor + ",00");
-					}
-					if (acertos >= 5 && acertos < 10) {
-						setarQuestao(2);
-						Questao questao = Questionario.listaQuestoes2.get(0);
-						String valor = questao.getValor();
-						acertar.setText("Acerto: R$:"+ valor + ",00");
-						
-						if (acertos == 5) {
-							acumular.setText("Acumulado: R$:5000,00");
-						}
-						
-						else {
-							int dinheiro = acertos2 * 10000;
-							acumular.setText("Acumulado: R$" + dinheiro + ",00");
-							acertos2++;
-						}
-					}
-					if (acertos >= 10 && acertos < 15) {
-						setarQuestao(3);
-						Questao questao = Questionario.listaQuestoes3.get(0);
-						String valor = questao.getValor();
-						acertar.setText("Acerto: R$:"+ valor + ",00");
-						
-						if (acertos == 10) {
-							acumular.setText("Acumulado: R$:50000,00");
-						}
-						
-						else {
-							int dinheiro = acertos3 * 100000;
-							acumular.setText("Acumulado: R$" + dinheiro + ",00");
-							acertos3++;
-						}
-					}
-					if (acertos == 15) {
-						setarQuestao(4);
-						acertar.setText("Milhão: R$:1.000.000,00");
-						acumular.setText("Acumulado: R$: 500.000,00");
-					}
-					
-					if (acertos == 16) {
-						w1.dispose();
-						JOptionPane.showMessageDialog(null, "Parabéns! Você venceu o Jogo do Milhão Sibugator\n" 
-								+ "e ganhou um prêmio de R$:1.000.000,00 !!!","Você joga muito!", JOptionPane.INFORMATION_MESSAGE);
-							
-					}
-					
-					acertos++;
-				}
-				else {
-					w1.dispose();
-					if (acertos <= 6) {
-						
-						acumulado = (acertos -1) * 1000;
-						acumulado /= 2;
-						JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-					}
-					
-					if (acertos > 6 && acertos <= 11) {
-
-						acumulado = (acertos2 -1) * 10000;
-						acumulado /= 2;
-						if (acertos == 11) {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:25000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-						}
-						else {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-						}
-					}
-					
-					if (acertos > 11 && acertos <= 16) {
-						acumulado = (acertos3 -1) * 100000;
-						acumulado /= 2;
-						if (acertos == 16) {
-							JOptionPane.showMessageDialog(null, "Você perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
-						}
-						else {
-							JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
-						}
-					}
 				} 
 			} */
 			
-				
+			//Tratamento de evento do botão pular
+			if (e.getSource() == pular) {
+				setarPulo();
+			}
+			
 		}
+			
+			public static boolean validarPulo() {
+				if (nDePulos > 0 && acertos < 15) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+					
+			public static void pularQuestao() {
+				if (acertos < 5) {
+					setarQuestao(1);
+				}
+				if (acertos >= 5 && acertos < 10) {
+					setarQuestao(2);
+				}
+				if (acertos >= 10 && acertos < 15) {
+					setarQuestao(3);
+				}
+				nDePulos--;
+			}
+				
+			public void setarPulo() {
+				if (validarPulo()) {
+					pularQuestao();
+					if (nDePulos != 1) {
+						pulos.setText("Você tem " + nDePulos + " pulos");
+					}
+					else {
+						pulos.setText("Você tem " + nDePulos + " pulo");
+					}
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Você não tem mais pulos","Sem recursos!", JOptionPane.INFORMATION_MESSAGE);
+				}
+			}
 		
 	}
+
+	
