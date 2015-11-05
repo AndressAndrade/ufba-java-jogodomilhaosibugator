@@ -266,18 +266,18 @@ public class JanelaPerguntas implements ActionListener  {
 			}
 			
 			if (acertos == 16) {
-				w1.dispose();
-				JOptionPane.showMessageDialog(null, "Você tem certeza?\n" 
+				
+				JOptionPane.showMessageDialog(null, "Voce tem certeza?\n" 
 						+ "","", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "Você tem certeza MESMO?\n" 
+				JOptionPane.showMessageDialog(null, "Voce tem certeza MESMO?\n" 
 						+ "","", JOptionPane.INFORMATION_MESSAGE);
 				JOptionPane.showMessageDialog(null, "POP UP!\n" 
 						+ "","", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "NÃO FOI DESSA VEZ\n" 
+				JOptionPane.showMessageDialog(null, "NAO FOI DESSA VEZ\n" 
 						+ "","", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "Você foi DIBRADO\n" 
+				JOptionPane.showMessageDialog(null, "Voce foi DIBRADO\n" 
 						+ "","", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "Você tem persistência?\n" 
+				JOptionPane.showMessageDialog(null, "Voce tem persistencia?\n" 
 						+ "","", JOptionPane.INFORMATION_MESSAGE);
 				JOptionPane.showMessageDialog(null, "Ich liebe dich nicht\n" 
 						+ "","", JOptionPane.INFORMATION_MESSAGE);
@@ -287,12 +287,13 @@ public class JanelaPerguntas implements ActionListener  {
 						+ "","", JOptionPane.INFORMATION_MESSAGE);
 				JOptionPane.showMessageDialog(null, "BRBRBRBRBRBRBR\n" 
 						+ "","", JOptionPane.INFORMATION_MESSAGE);		
-				JOptionPane.showMessageDialog(null, "Você acaba de doar tudo a fundação Bill Gates\n" 
+				JOptionPane.showMessageDialog(null, "Voce acaba de doar tudo a fundacao Bill Gates\n" 
 						+ "e sua pesquisa a vacas com odor humano!","", JOptionPane.INFORMATION_MESSAGE);		
-				JOptionPane.showMessageDialog(null, "Parabéns! Você venceu o Jogo do Milhão Sibugator\n" 
-						+ "e ganhou um prêmio de R$:1.000.000,00 !!!","Você joga muito!", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "Caiu no conto do vigário, perdeu tudo ao clicar\n" 
-						+ "em OK! Fim do programa.","", JOptionPane.INFORMATION_MESSAGE);		
+				JOptionPane.showMessageDialog(null, "Parabens! Você venceu o Jogo do Milhao Sibugator\n" 
+						+ "e ganhou um premio de R$:1.000.000,00 !!!","Voce joga muito!", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Caiu no conto do vigario, perdeu tudo ao clicar\n" 
+						+ "em OK! Fim do programa.","", JOptionPane.INFORMATION_MESSAGE);
+				w1.dispose();		
 					
 			}
 			
