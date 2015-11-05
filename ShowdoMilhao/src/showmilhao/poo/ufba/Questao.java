@@ -39,7 +39,6 @@ public class Questao {
 
 	public Questao(String nivel,String pergunta,String resposta1,String resposta2,String resposta3,String resposta4,String respostaCorreta,String valor,String numeracao) {
 		super();
-		request.setCharacterEncoding("UTF8");  
 		this.nivel = nivel;
 		this.pergunta = pergunta;
 		this.resposta1 = resposta1;
