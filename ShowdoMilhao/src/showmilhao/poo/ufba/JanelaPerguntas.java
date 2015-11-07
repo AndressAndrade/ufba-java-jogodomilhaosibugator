@@ -6,6 +6,8 @@ import javax.swing.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 
 public class JanelaPerguntas implements ActionListener  {
@@ -39,7 +41,7 @@ public class JanelaPerguntas implements ActionListener  {
 	static List<Questao> listaQuestoes3 = new ArrayList();
 	static List<Questao> listaQuestoes4 = new ArrayList(); */
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		//um molde de 10 perguntas aleatÃ³rias -> falta inserir os dados
 		
@@ -300,8 +302,14 @@ public class JanelaPerguntas implements ActionListener  {
 			acertos++;
 		}
 		
-		public static void errarPergunta() {
+		public static void errarPergunta() throws IOException, InterruptedException {
 			w1.dispose();
+			
+			//novo código:
+			File errou = new File("errou.wav");
+			Audio.tocarSom(errou);
+			// 
+
 			if (acertos <= 6) {
 				
 				acumulado = (acertos -1) * 1000;
@@ -343,7 +351,12 @@ public class JanelaPerguntas implements ActionListener  {
 					acertarPergunta();
 				}
 				else {
-					errarPergunta();
+					try {
+						errarPergunta();
+					} catch (IOException | InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			}
 		
@@ -352,7 +365,12 @@ public class JanelaPerguntas implements ActionListener  {
 					acertarPergunta();
 				}
 				else {
-					errarPergunta();
+					try {
+						errarPergunta();
+					} catch (IOException | InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			}
 			
@@ -361,7 +379,12 @@ public class JanelaPerguntas implements ActionListener  {
 					acertarPergunta();
 				}
 				else {
-					errarPergunta();
+					try {
+						errarPergunta();
+					} catch (IOException | InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			}
 			if (e.getSource() == res[3]) {
@@ -369,7 +392,12 @@ public class JanelaPerguntas implements ActionListener  {
 					acertarPergunta();
 				}
 				else {
-					errarPergunta();
+					try {
+						errarPergunta();
+					} catch (IOException | InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			}
 			
