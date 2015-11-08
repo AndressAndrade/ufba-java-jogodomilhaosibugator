@@ -35,32 +35,15 @@ public class JanelaPerguntas implements ActionListener  {
 	
 	static String certo;
 	
-	/*
-	static List<Questao> listaQuestoes = new ArrayList();
-	static List<Questao> listaQuestoes2 = new ArrayList();
-	static List<Questao> listaQuestoes3 = new ArrayList();
-	static List<Questao> listaQuestoes4 = new ArrayList(); */
 	
 	public static void main(String[] args) throws IOException {
-		
-		//um molde de 10 perguntas aleatórias -> falta inserir os dados
-		
-		//perguntas nível 1
-		/*
-		List<String> rq1 = new ArrayList<String>();
-		Questao q1 = new Questao("n1 - Qual era a cor do cavalo branco de Napoleão?", rq1, "azul", 1, 1000, 1);
-		rq1.add("branco");
-		rq1.add("azul");
-		rq1.add("amarelo");
-		rq1.add("preto");
-		*/
 		
 		//janelas de perguntas
 		
 		Questionario.readQuestionario();
 		new JanelaPerguntas();
 		
-		//invocando as perguntas p/ o 1º nível - necessário 5 acertos
+		//invocando as perguntas p/ o 1º nivel - necessario 5 acertos
 		if (acertos < 5) {
 			setarCaixa(1);
 		}
@@ -130,7 +113,7 @@ public class JanelaPerguntas implements ActionListener  {
 		acumular.setBounds(12,350,180,40);
 		w1.getContentPane().add(acumular);
 		
-		pulos = new JLabel ("Você tem 3 pulos"); 
+		pulos = new JLabel ("Voce tem 3 pulos"); 
 		pulos.setBounds(12,380,150,40);
 		w1.getContentPane().add(pulos);
 		
@@ -148,26 +131,23 @@ public class JanelaPerguntas implements ActionListener  {
 	
 		if (nivel == 1) {
 			questao = Questionario.listaQuestoes.get(0);
-			certo = questao.respostaCorreta;
 		}
 		if (nivel == 2) {
 			questao = Questionario.listaQuestoes2.get(0);
-			certo = questao.respostaCorreta;
 		}
 		if (nivel == 3) {
 			questao = Questionario.listaQuestoes3.get(0);
-			certo = questao.respostaCorreta;
 		}
 		if (nivel == 4) {
 			questao = Questionario.listaQuestoes4.get(0);
-			certo = questao.respostaCorreta;
 		}
 		
+		certo = questao.respostaCorreta;
 		return questao;
 	}
 	
 	
-		//função para setar as perguntas na JanelaPerguntas
+		//funcao para setar as perguntas na JanelaPerguntas
 		public static void setarCaixa(int nivel) {
 			
 			Questao questao = setQuestaoByNivel(nivel); 
@@ -184,7 +164,7 @@ public class JanelaPerguntas implements ActionListener  {
 		}
 		public static void removerQuestao (int nivel) {
 			
-		//novo método auxiliar
+		//novo metodo auxiliar
 			
 			if (nivel == 1) {
 				Questionario.listaQuestoes.remove(0);
@@ -204,18 +184,14 @@ public class JanelaPerguntas implements ActionListener  {
 			}
 		}
 		
-		//além de setar a caixa, remove a questão que foi utilizada, evitando repetição
+		//alem de setar a caixa, remove a questao que foi utilizada, evitando repeticao
 		public static void setarQuestao(int nivel) {
 			removerQuestao(nivel);
 			setarCaixa(nivel);
 		}
 		
-//		public String obterRespostaCorreta(Questao questao) {
-//			return questao.respostaCorreta;
-//		}
 		
-		
-		//Métodos criados para otimizar eventos nos botões de resposta
+		//Metodos criados para otimizar eventos nos botoes de resposta
 		public static void acertarPergunta() {
 			JOptionPane.showMessageDialog(null, "Acertou", "Parabéns!", JOptionPane.INFORMATION_MESSAGE);
 			
@@ -291,7 +267,7 @@ public class JanelaPerguntas implements ActionListener  {
 						+ "","", JOptionPane.INFORMATION_MESSAGE);		
 				JOptionPane.showMessageDialog(null, "Voce acaba de doar tudo a fundacao Bill Gates\n" 
 						+ "e sua pesquisa a vacas com odor humano!","", JOptionPane.INFORMATION_MESSAGE);		
-				JOptionPane.showMessageDialog(null, "Parabens! Você venceu o Jogo do Milhao Sibugator\n" 
+				JOptionPane.showMessageDialog(null, "Parabens! Voce venceu o Jogo do Milhao Sibugator\n" 
 						+ "e ganhou um premio de R$:1.000.000,00 !!!","Voce joga muito!", JOptionPane.INFORMATION_MESSAGE);
 				JOptionPane.showMessageDialog(null, "Caiu no conto do vigario, perdeu tudo ao clicar\n" 
 						+ "em OK! Fim do programa.","", JOptionPane.INFORMATION_MESSAGE);
@@ -303,18 +279,17 @@ public class JanelaPerguntas implements ActionListener  {
 		}
 		
 		public static void errarPergunta() throws IOException, InterruptedException {
-			w1.dispose();
 			
 			//novo c�digo:
 			File errou = new File("errou.wav");
 			Audio.tocarSom(errou);
 			// 
-
+			
 			if (acertos <= 6) {
 				
 				acumulado = (acertos -1) * 1000;
 				acumulado /= 2;
-				JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Voce errou. Voce leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 			}
 			
 			if (acertos > 6 && acertos <= 11) {
@@ -322,10 +297,10 @@ public class JanelaPerguntas implements ActionListener  {
 				acumulado = (acertos2 -1) * 10000;
 				acumulado /= 2;
 				if (acertos == 11) {
-					JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:25000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Voce errou. Voce leva R$:25000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Voce errou. Voce leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 				}
 			}
 			
@@ -333,18 +308,20 @@ public class JanelaPerguntas implements ActionListener  {
 				acumulado = (acertos3 -1) * 100000;
 				acumulado /= 2;
 				if (acertos == 16) {
-					JOptionPane.showMessageDialog(null, "Você perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Voce perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Você errou. Você leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Voce errou. Voce leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 				}
-			}
+			}	
+			
+			w1.dispose();
 		}
 		
 		
 		public void actionPerformed(ActionEvent e) {
 			
-			//Tratamento de evento nos botões de resposta
+			//Tratamento de evento nos botoes de resposta
 			
 			if (e.getSource() == res[0]) {
 				if (res[0].getText().equals(certo)) {
@@ -354,7 +331,6 @@ public class JanelaPerguntas implements ActionListener  {
 					try {
 						errarPergunta();
 					} catch (IOException | InterruptedException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}
@@ -368,7 +344,6 @@ public class JanelaPerguntas implements ActionListener  {
 					try {
 						errarPergunta();
 					} catch (IOException | InterruptedException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}
@@ -382,7 +357,6 @@ public class JanelaPerguntas implements ActionListener  {
 					try {
 						errarPergunta();
 					} catch (IOException | InterruptedException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}
@@ -395,7 +369,6 @@ public class JanelaPerguntas implements ActionListener  {
 					try {
 						errarPergunta();
 					} catch (IOException | InterruptedException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}
@@ -408,77 +381,34 @@ public class JanelaPerguntas implements ActionListener  {
 				if (acertos <= 6) {
 					
 					acumulado = (acertos -1) * 1000;
-					JOptionPane.showMessageDialog(null, "Você acumulou R$:" + acumulado + ",00","Tente de novo!", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Voce acumulou R$:" + acumulado + ",00","Tente de novo!", JOptionPane.INFORMATION_MESSAGE);
 				}
 				
 				if (acertos > 6 && acertos <= 11) {
 
 					acumulado = (acertos2 -1) * 10000;
 					if (acertos == 11) {
-						JOptionPane.showMessageDialog(null, "Você acumulou R$:50000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Voce acumulou R$:50000,00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 					}
 					else {
-						JOptionPane.showMessageDialog(null, "Você acumulou R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Voce acumulou R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				
 				if (acertos > 11 && acertos <= 16) {
 					acumulado = (acertos3 -1) * 100000;
 					if (acertos == 16) {
-						JOptionPane.showMessageDialog(null, "Você acumulou R$:500.000,00","Muito bem!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Voce acumulou R$:500.000,00","Muito bem!", JOptionPane.INFORMATION_MESSAGE);
 					}
 					else {
-						JOptionPane.showMessageDialog(null, "Você acumulou R$:" + acumulado + ",00","Muito bem!", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Voce acumulou R$:" + acumulado + ",00","Muito bem!", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				
 			}
 			
-			//Tratamento de evento do botão pular
-			/*if (e.getSource() == pular) {		
-				
-				if (nDePulos > 0) {
-					nDePulos--;
-					
-					if (acertos < 5) {
-						setarQuestao(1);
-						
-						if (nDePulos != 1) {
-							pulos.setText("Você tem " + nDePulos + " pulos");
-						}
-						else {
-							pulos.setText("Você tem " + nDePulos + " pulo");
-						}
-					}
-					
-					if (acertos >= 5 && acertos < 10) {
-						setarQuestao(2);
-						
-						if (nDePulos != 1) {
-							pulos.setText("Você tem " + nDePulos + " pulos");
-						}
-						else {
-							pulos.setText("Você tem " + nDePulos + " pulo");
-						}
-					}
-					if (acertos >= 10 && acertos < 15) {
-						setarQuestao(3);
-						
-						if (nDePulos != 1) {
-							pulos.setText("Você tem " + nDePulos + " pulos");
-						}
-						else {
-							pulos.setText("Você tem " + nDePulos + " pulo");
-						}
-					}
-					
-				}
-				else {
-					JOptionPane.showMessageDialog(null, "Você não tem mais pulos","Sem recursos!", JOptionPane.INFORMATION_MESSAGE);
-				} 
-			} */
 			
-			//Tratamento de evento do botão pular
+			//Tratamento de evento do botao pular
 			if (e.getSource() == pular) {
 				setarPulo();
 			}
@@ -511,14 +441,14 @@ public class JanelaPerguntas implements ActionListener  {
 				if (validarPulo()) {
 					pularQuestao();
 					if (nDePulos != 1) {
-						pulos.setText("Você tem " + nDePulos + " pulos");
+						pulos.setText("Voce tem " + nDePulos + " pulos");
 					}
 					else {
-						pulos.setText("Você tem " + nDePulos + " pulo");
+						pulos.setText("Voce tem " + nDePulos + " pulo");
 					}
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Você não tem mais pulos","Sem recursos!", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Voce nao tem mais pulos","Sem recursos!", JOptionPane.INFORMATION_MESSAGE);
 				}
 			}
 		
