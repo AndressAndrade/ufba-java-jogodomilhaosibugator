@@ -40,7 +40,7 @@ public class JanelaPerguntas implements ActionListener  {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		JOptionPane.showMessageDialog(null, "Clique no OK para comecar o jogo", "Bem-vindo ao Show do Milhao", JOptionPane.INFORMATION_MESSAGE);
-		Audio.tocarSom(comeco, 3500);
+		Audio.tocarSom(comeco, 5600);
 		
 		//janelas de perguntas
 		
