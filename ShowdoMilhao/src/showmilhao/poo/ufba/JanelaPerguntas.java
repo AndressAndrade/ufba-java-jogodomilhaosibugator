@@ -252,7 +252,11 @@ public class JanelaPerguntas implements ActionListener  {
 			}
 			
 			if (acertos == 16) {
-				
+				Audio ganhou = new Audio();
+				ganhou.audioid = 1;
+				Thread threadMusica2 = new Thread(ganhou);
+			    threadMusica2.start();
+		
 				JOptionPane.showMessageDialog(null, "Voce tem certeza?\n" 
 						+ "","", JOptionPane.INFORMATION_MESSAGE);
 				JOptionPane.showMessageDialog(null, "Voce tem certeza MESMO?\n" 
@@ -279,6 +283,9 @@ public class JanelaPerguntas implements ActionListener  {
 						+ "e ganhou um premio de R$:1.000.000,00 !!!","Voce joga muito!", JOptionPane.INFORMATION_MESSAGE);
 				JOptionPane.showMessageDialog(null, "Caiu no conto do vigario, perdeu tudo ao clicar\n" 
 						+ "em OK! Fim do programa.","", JOptionPane.INFORMATION_MESSAGE);
+				final ImageIcon ganhouimage = new ImageIcon("ganhou.jpg");
+				JOptionPane.showMessageDialog(null, "Você é fera, bicho", "fausto", JOptionPane.INFORMATION_MESSAGE, ganhouimage);
+				
 				w1.dispose();		
 					
 			}
@@ -319,6 +326,7 @@ public class JanelaPerguntas implements ActionListener  {
 				if (acertos == 16) {
 					final ImageIcon fausto = new ImageIcon("darkfausto.jpg");
 					Audio perdeu = new Audio();
+					perdeu.audioid = 0;
 					JOptionPane.showMessageDialog(null, "Voce perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
 					Thread threadMusica = new Thread(perdeu);
 				    threadMusica.start();

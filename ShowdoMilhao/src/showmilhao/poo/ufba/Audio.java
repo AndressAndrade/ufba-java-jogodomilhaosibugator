@@ -10,6 +10,8 @@ import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
 
 public class Audio implements Runnable {
+	
+	int audioid;
 
 	public static void tocarSom(File nomeDoSom, int intervaloExecucao) throws IOException, InterruptedException {
 		InputStream som;
@@ -34,17 +36,28 @@ public class Audio implements Runnable {
 	
 	
 	public void run() {
+	if(audioid == 0){
 		File perdeu = new File("SoundofSilence.wav");
 		try {
 			tocarSom(perdeu, 21000);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	else {
+		File ganhou = new File("ganhou.wav");
+	try {
+		tocarSom(ganhou, 37000);
+	} catch (IOException e) {
+		e.printStackTrace();
+	} catch (InterruptedException e) {
+		e.printStackTrace();
+		}
+	}		
+}
+
 	
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
