@@ -35,12 +35,12 @@ public class JanelaPerguntas implements ActionListener  {
 	
 	static String certo;
 	
-	static File comeco = new File("comeco.wav");
+	static File comeco = new File("sibugator.wav");
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		JOptionPane.showMessageDialog(null, "Clique no OK para comecar o jogo", "Bem-vindo ao Show do Milhao", JOptionPane.INFORMATION_MESSAGE);
-		Audio.tocarSom(comeco, 2250);
+		Audio.tocarSom(comeco, 3500);
 		
 		//janelas de perguntas
 		

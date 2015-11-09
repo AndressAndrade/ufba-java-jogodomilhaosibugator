@@ -33,22 +33,6 @@ public class Audio implements Runnable {
 	}
 	
 	
-	public static void main(String[] args) throws IOException, InterruptedException {
-		
-		 /*File errou = new File("errou.wav");
-		 File perdeu = new File("SoundofSilence.wav");
-		 File acertou = new File ("acertou.wav");
-		 tocarSom2(perdeu);
-		 //tocarSom(acertou);
-		 tocarSom(errou);
-		 */ 
-		
-		File comeco = new File("comeco.wav");
-		tocarSom(comeco, 2300);
-
-	}
-
-	@Override
 	public void run() {
 		File perdeu = new File("SoundofSilence.wav");
 		try {
@@ -60,6 +44,22 @@ public class Audio implements Runnable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	
+	public static void main(String[] args) throws IOException, InterruptedException {
+		
+		 /*File errou = new File("errou.wav");
+		 File perdeu = new File("SoundofSilence.wav");
+		 File acertou = new File ("acertou.wav");
+		 tocarSom2(perdeu);
+		 //tocarSom(acertou);
+		 tocarSom(errou);
+		 */ 
+		
+		File comeco = new File("sibugator.wav");
+		tocarSom(comeco, 3500);
+
 	}
 
 }
