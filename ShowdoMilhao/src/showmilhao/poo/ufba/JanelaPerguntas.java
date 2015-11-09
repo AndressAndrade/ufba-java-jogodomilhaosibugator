@@ -192,8 +192,12 @@ public class JanelaPerguntas implements ActionListener  {
 		
 		
 		//Metodos criados para otimizar eventos nos botoes de resposta
-		public static void acertarPergunta() {
-			JOptionPane.showMessageDialog(null, "Acertou", "Parab√©ns!", JOptionPane.INFORMATION_MESSAGE);
+		public static void acertarPergunta() throws IOException, InterruptedException {
+			File acertou = new File("acertou.wav");
+			Audio.tocarSom(acertou);
+			
+			JOptionPane.showMessageDialog(null, "Acertou", "Parabens!", JOptionPane.INFORMATION_MESSAGE);
+			
 			
 			if (acertos < 5) {
 				setarQuestao(1);
@@ -283,6 +287,7 @@ public class JanelaPerguntas implements ActionListener  {
 			//novo cÛdigo:
 			File errou = new File("errou.wav");
 			Audio.tocarSom(errou);
+			
 			// 
 			
 			if (acertos <= 6) {
@@ -325,7 +330,11 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			if (e.getSource() == res[0]) {
 				if (res[0].getText().equals(certo)) {
-					acertarPergunta();
+					try {
+						acertarPergunta();
+					} catch (IOException | InterruptedException e1) {
+						e1.printStackTrace();
+					}
 				}
 				else {
 					try {
@@ -338,7 +347,11 @@ public class JanelaPerguntas implements ActionListener  {
 		
 			if (e.getSource() == res[1]) {
 				if (res[1].getText().equals(certo)) {
-					acertarPergunta();
+					try {
+						acertarPergunta();
+					} catch (IOException | InterruptedException e1) {
+						e1.printStackTrace();
+					}
 				}
 				else {
 					try {
@@ -351,7 +364,11 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			if (e.getSource() == res[2]) {
 				if (res[2].getText().equals(certo)) {
-					acertarPergunta();
+					try {
+						acertarPergunta();
+					} catch (IOException | InterruptedException e1) {
+						e1.printStackTrace();
+					}
 				}
 				else {
 					try {
@@ -363,7 +380,11 @@ public class JanelaPerguntas implements ActionListener  {
 			}
 			if (e.getSource() == res[3]) {
 				if (res[3].getText().equals(certo)) {
-					acertarPergunta();
+					try {
+						acertarPergunta();
+					} catch (IOException | InterruptedException e1) {
+						e1.printStackTrace();
+					}
 				}
 				else {
 					try {

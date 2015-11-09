@@ -27,7 +27,6 @@ public class Audio {
 
 			
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -37,6 +36,8 @@ public class Audio {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		 File errou = new File("errou.wav");
+		 File acertou = new File ("acertou.wav");
+		 tocarSom(acertou);
 		 tocarSom(errou);
 		  
 
