@@ -11,7 +11,7 @@ import sun.audio.AudioStream;
 
 public class Audio implements Runnable {
 
-	public static void tocarSom(File nomeDoSom) throws IOException, InterruptedException {
+	public static void tocarSom(File nomeDoSom, int intervaloExecucao) throws IOException, InterruptedException {
 		InputStream som;
 		
 		try {
@@ -21,28 +21,7 @@ public class Audio implements Runnable {
 			
 			AudioPlayer.player.start(audio);
 			
-			Thread.sleep(1800);
-			
-			AudioPlayer.player.stop(audio);
-
-			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		
-	}
-	
-	public static void tocarSom2(File nomeDoSom) throws IOException, InterruptedException {
-		InputStream som;
-		
-		try {
-			
-			som = new FileInputStream(nomeDoSom);
-			AudioStream audio = new AudioStream(som);
-			
-			AudioPlayer.player.start(audio);
-			
-			Thread.sleep(21000);
+			Thread.sleep(intervaloExecucao);
 			
 			AudioPlayer.player.stop(audio);
 
@@ -63,6 +42,9 @@ public class Audio implements Runnable {
 		 //tocarSom(acertou);
 		 tocarSom(errou);
 		 */ 
+		
+		File comeco = new File("comeco.wav");
+		tocarSom(comeco, 2300);
 
 	}
 
@@ -70,7 +52,7 @@ public class Audio implements Runnable {
 	public void run() {
 		File perdeu = new File("SoundofSilence.wav");
 		try {
-			tocarSom2(perdeu);
+			tocarSom(perdeu, 21000);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

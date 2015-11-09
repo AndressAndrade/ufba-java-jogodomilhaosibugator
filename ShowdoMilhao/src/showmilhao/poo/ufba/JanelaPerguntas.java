@@ -36,7 +36,10 @@ public class JanelaPerguntas implements ActionListener  {
 	static String certo;
 	
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
+		
+		File comeco = new File("comeco.wav");
+		Audio.tocarSom(comeco, 2250);
 		
 		JOptionPane.showMessageDialog(null, "Clique no OK para comecar o jogo", "Bem-vindo ao Show do Milhao", JOptionPane.INFORMATION_MESSAGE);
 		
@@ -196,7 +199,7 @@ public class JanelaPerguntas implements ActionListener  {
 		//Metodos criados para otimizar eventos nos botoes de resposta
 		public static void acertarPergunta() throws IOException, InterruptedException {
 			File acertou = new File("acertou.wav");
-			Audio.tocarSom(acertou);
+			Audio.tocarSom(acertou, 1800);
 			
 			JOptionPane.showMessageDialog(null, "Acertou", "Parabens!", JOptionPane.INFORMATION_MESSAGE);
 			
@@ -288,7 +291,7 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			//novo código:
 			File errou = new File("errou.wav");
-			Audio.tocarSom(errou);
+			Audio.tocarSom(errou, 1800);
 			
 			// 
 			
