@@ -38,6 +38,8 @@ public class JanelaPerguntas implements ActionListener  {
 	
 	public static void main(String[] args) throws IOException {
 		
+		JOptionPane.showMessageDialog(null, "Clique no OK para comecar o jogo", "Bem-vindo ao Show do Milhao", JOptionPane.INFORMATION_MESSAGE);
+		
 		//janelas de perguntas
 		
 		Questionario.readQuestionario();
@@ -243,7 +245,7 @@ public class JanelaPerguntas implements ActionListener  {
 			}
 			if (acertos == 15) {
 				setarQuestao(4);
-				acertar.setText("Milhão: R$:1.000.000,00");
+				acertar.setText("Milhao: R$:1.000.000,00");
 				acumular.setText("Acumulado: R$: 500.000,00");
 			}
 			
@@ -268,7 +270,7 @@ public class JanelaPerguntas implements ActionListener  {
 				JOptionPane.showMessageDialog(null, "HUEUHEHUEUHEUHEHUE\n" 
 						+ "","", JOptionPane.INFORMATION_MESSAGE);
 				JOptionPane.showMessageDialog(null, "BRBRBRBRBRBRBR\n" 
-						+ "","", JOptionPane.INFORMATION_MESSAGE);		
+						+ "","", JOptionPane.INFORMATION_MESSAGE);	
 				JOptionPane.showMessageDialog(null, "Voce acaba de doar tudo a fundacao Bill Gates\n" 
 						+ "e sua pesquisa a vacas com odor humano!","", JOptionPane.INFORMATION_MESSAGE);		
 				JOptionPane.showMessageDialog(null, "Parabens! Voce venceu o Jogo do Milhao Sibugator\n" 
@@ -313,7 +315,14 @@ public class JanelaPerguntas implements ActionListener  {
 				acumulado = (acertos3 -1) * 100000;
 				acumulado /= 2;
 				if (acertos == 16) {
+					final ImageIcon fausto = new ImageIcon("darkfausto.jpg");
+					Audio perdeu = new Audio();
 					JOptionPane.showMessageDialog(null, "Voce perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
+					Thread threadMusica = new Thread(perdeu);
+				    threadMusica.start();
+					JOptionPane.showMessageDialog(null, " ", "fausto", JOptionPane.INFORMATION_MESSAGE, fausto);
+					
+					
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Voce errou. Voce leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
