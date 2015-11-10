@@ -65,10 +65,7 @@ public class JanelaPerguntas implements ActionListener  {
 			setarCaixa(4);
 		}
 
-		
 	}
-	
-	
 	
 	public JanelaPerguntas(){
 		w1 = new JFrame();
@@ -331,7 +328,6 @@ public class JanelaPerguntas implements ActionListener  {
 					Thread threadMusica = new Thread(perdeu);
 				    threadMusica.start();
 					JOptionPane.showMessageDialog(null, " ", "fausto", JOptionPane.INFORMATION_MESSAGE, fausto);
-					
 					
 				}
 				else {
