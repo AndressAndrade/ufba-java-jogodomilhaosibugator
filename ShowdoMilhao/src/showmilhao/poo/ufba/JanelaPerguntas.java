@@ -346,73 +346,84 @@ public class JanelaPerguntas implements ActionListener  {
 		public void actionPerformed(ActionEvent e) {
 			
 			//Tratamento de evento nos botoes de resposta
-			
-			if (e.getSource() == res[0]) {
-				if (res[0].getText().equals(certo)) {
+			for (int i = 0; i < 4; i++)
+				{ 
+				if (e.getSource() == res[i]) {
+					
 					try {
-						acertarPergunta();
+						if (res[i].getText().equals(certo)) {
+							acertarPergunta();
+						}
+						
+						else {
+							errarPergunta();
+						}
 					} catch (IOException | InterruptedException e1) {
 						e1.printStackTrace();
 					}
 				}
-				else {
-					try {
-						errarPergunta();
-					} catch (IOException | InterruptedException e1) {
-						e1.printStackTrace();
+			}
+				
+
+			
+			/*if (e.getSource() == res[0]) {
+				try {
+					if (res[0].getText().equals(certo)) {
+						acertarPergunta();
 					}
+					
+					else {
+						errarPergunta();
+					}
+				} catch (IOException | InterruptedException e1) {
+					e1.printStackTrace();
 				}
 			}
 		
+			
 			if (e.getSource() == res[1]) {
-				if (res[1].getText().equals(certo)) {
-					try {
+				try {
+					if (res[1].getText().equals(certo)) {
 						acertarPergunta();
-					} catch (IOException | InterruptedException e1) {
-						e1.printStackTrace();
 					}
-				}
-				else {
-					try {
+					
+					else {
 						errarPergunta();
-					} catch (IOException | InterruptedException e1) {
-						e1.printStackTrace();
 					}
+				} catch (IOException | InterruptedException e1) {
+					e1.printStackTrace();
 				}
 			}
 			
+			
 			if (e.getSource() == res[2]) {
-				if (res[2].getText().equals(certo)) {
-					try {
+				try {
+					if (res[2].getText().equals(certo)) {
 						acertarPergunta();
-					} catch (IOException | InterruptedException e1) {
-						e1.printStackTrace();
 					}
-				}
-				else {
-					try {
+					
+					else {
 						errarPergunta();
-					} catch (IOException | InterruptedException e1) {
-						e1.printStackTrace();
 					}
+				} catch (IOException | InterruptedException e1) {
+					e1.printStackTrace();
 				}
 			}
+			
+			
 			if (e.getSource() == res[3]) {
-				if (res[3].getText().equals(certo)) {
-					try {
+				try {
+					if (res[3].getText().equals(certo)) {
 						acertarPergunta();
-					} catch (IOException | InterruptedException e1) {
-						e1.printStackTrace();
 					}
-				}
-				else {
-					try {
+					
+					else {
 						errarPergunta();
-					} catch (IOException | InterruptedException e1) {
-						e1.printStackTrace();
 					}
+				} catch (IOException | InterruptedException e1) {
+					e1.printStackTrace();
 				}
-			}
+			} */
 			
 			
 			//Tratamento de evento do botão parar
