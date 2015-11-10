@@ -343,6 +343,20 @@ public class JanelaPerguntas implements ActionListener  {
 		}
 		
 		
+		public void setarBackground() {
+			for (int i = 0; i < 4; i++) {
+				if (res[i].getText().equals(certo)) {
+					res[i].setBackground(Color.GREEN);
+				}
+			}
+		}
+		
+		public void resetarBackground() {
+			for (int i = 0; i < 4; i++) {
+				res[i].setBackground(null);
+			}
+		}
+		
 		public void actionPerformed(ActionEvent e) {
 			
 			//Tratamento de evento nos botoes de resposta
@@ -351,11 +365,15 @@ public class JanelaPerguntas implements ActionListener  {
 				if (e.getSource() == res[i]) {
 					
 					try {
+						setarBackground();
+						
 						if (res[i].getText().equals(certo)) {
 							acertarPergunta();
+							resetarBackground();
 						}
 						
 						else {
+							res[i].setBackground(Color.RED);
 							errarPergunta();
 						}
 					} catch (IOException | InterruptedException e1) {
