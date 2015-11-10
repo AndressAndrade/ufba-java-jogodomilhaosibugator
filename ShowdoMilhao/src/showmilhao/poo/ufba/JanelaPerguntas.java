@@ -281,7 +281,7 @@ public class JanelaPerguntas implements ActionListener  {
 				JOptionPane.showMessageDialog(null, "Caiu no conto do vigario, perdeu tudo ao clicar\n" 
 						+ "em OK! Fim do programa.","", JOptionPane.INFORMATION_MESSAGE);
 				final ImageIcon ganhouimage = new ImageIcon("ganhou.jpg");
-				JOptionPane.showMessageDialog(null, "Você é fera, bicho", "fausto", JOptionPane.INFORMATION_MESSAGE, ganhouimage);
+				JOptionPane.showMessageDialog(null, "Você é fera, bicho", "YOU WON", JOptionPane.INFORMATION_MESSAGE, ganhouimage);
 				
 				w1.dispose();		
 					
@@ -327,7 +327,7 @@ public class JanelaPerguntas implements ActionListener  {
 					JOptionPane.showMessageDialog(null, "Voce perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
 					Thread threadMusica = new Thread(perdeu);
 				    threadMusica.start();
-					JOptionPane.showMessageDialog(null, " ", "fausto", JOptionPane.INFORMATION_MESSAGE, fausto);
+					JOptionPane.showMessageDialog(null, " ", "GAME OVER", JOptionPane.INFORMATION_MESSAGE, fausto);
 					
 				}
 				else {
