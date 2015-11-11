@@ -79,66 +79,9 @@ public class Questionario {
 	
 	
 	public static void main(String[] args) {
-		/*
-		try {
-			
-			CsvReader questoes = new CsvReader("perguntas.csv");
-		
-			questoes.readHeaders();
-			
-			String um = "1";
-			String dois = "2";
-			String tres = "3";
-			String quatro = "4";
-			
-			while (questoes.readRecord())
-			{
-				
-				String nivel = questoes.get("Nivel");
-				String pergunta = questoes.get("Pergunta");
-				String resposta1 = questoes.get("Resposta1");
-				String resposta2 = questoes.get("Resposta2");
-				String resposta3 = questoes.get("Resposta3");
-				String resposta4 = questoes.get("Resposta4");
-				String respostaCorreta = questoes.get("RespostaCerta");
-				String valor = questoes.get("Valor");
-				String numeracao = questoes.get("Numeracao");
-				
-				if(um.equals(nivel)){
-					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCorreta,valor,numeracao);
-					listaQuestoes.add(questao);
-					
-				}
-				if(dois.equals(nivel)){
-					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCorreta,valor,numeracao);
-					listaQuestoes2.add(questao);
-				}
-				if(tres.equals(nivel)){
-					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCorreta,valor,numeracao);
-					listaQuestoes3.add(questao);
-					
-				}
-				if(quatro.equals(nivel)){
-					Questao questao = new Questao(nivel,pergunta,resposta1,resposta2,resposta3,resposta4,respostaCorreta,valor,numeracao);
-					listaQuestoes4.add(questao);
-				}
-			}
-	
-			//embaralhando a lista de Quest�es
-			Collections.shuffle(listaQuestoes);
-			Collections.shuffle(listaQuestoes2);
-			Collections.shuffle(listaQuestoes3);
-			Collections.shuffle(listaQuestoes4);
-			
-			questoes.close();
-			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		*/
-		
+<<<<<<< HEAD
+=======
+>>>>>>> 4e26e289b8b790d61ea52337aa8ab69d2ebbd6a5
 		
 		//Teste
 		readQuestionario();
