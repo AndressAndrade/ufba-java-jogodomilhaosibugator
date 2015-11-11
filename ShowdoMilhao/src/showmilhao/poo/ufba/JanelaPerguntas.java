@@ -22,12 +22,20 @@ public class JanelaPerguntas implements ActionListener  {
 	static  JLabel  acertar;
 	static  JLabel  acumular;
 	static  JLabel  pulos;
+	static  JLabel tempo;
 	
 	static  JFrame  w1;
 	
+	static int i;
 	static  int nDePulos = 3;
 	static  int dinheiro = 0;
 	static  int acumulado = 0;
+	static  int oldtime = 30;
+	static  int curtime = 30;
+	static  int timeID = 0;
+
+	static boolean selecionado = false;
+	
 	
 	static int acertos = 1;
 	static int acertos2 = 1;
@@ -35,17 +43,20 @@ public class JanelaPerguntas implements ActionListener  {
 	
 	static String certo;
 	
+	static File acertou = new File("acertou.wav");
+	static File errou = new File("errou.wav");
 	static File comeco = new File("sibugator.wav");
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		JOptionPane.showMessageDialog(null, "Clique no OK para comecar o jogo", "Bem-vindo ao Show do Milhao", JOptionPane.INFORMATION_MESSAGE);
-		Audio.tocarSom(comeco, 5600);
+		//Audio.tocarSom(comeco, 5600);
 		
 		//janelas de perguntas
 		
 		Questionario.readQuestionario();
 		new JanelaPerguntas();
+		
 		
 		//invocando as perguntas p/ o 1Âº nivel - necessario 5 acertos
 		if (acertos < 5) {
@@ -64,6 +75,8 @@ public class JanelaPerguntas implements ActionListener  {
 		if (acertos == 15) {
 			setarCaixa(4);
 		}
+		
+		setaTempo();
 
 	}
 	
@@ -106,6 +119,10 @@ public class JanelaPerguntas implements ActionListener  {
 		pular.setBounds(172, 340, 80, 40);
 		w1.getContentPane().add(pular);
 		
+		tempo = new JLabel("Tempo:" + curtime);
+		tempo.setBounds(12,290,120,40);
+		w1.getContentPane().add(tempo);
+		
 		acertar = new JLabel("Acerto: R$:1000,00");
 		acertar.setBounds(12,320,150,40);
 		w1.getContentPane().add(acertar);
@@ -115,7 +132,7 @@ public class JanelaPerguntas implements ActionListener  {
 		w1.getContentPane().add(acumular);
 		
 		pulos = new JLabel ("Voce tem 3 pulos"); 
-		pulos.setBounds(12,380,150,40);
+		pulos.setBounds(12,380,210,40);
 		w1.getContentPane().add(pulos);
 		
 		parar.addActionListener(this);
@@ -147,6 +164,24 @@ public class JanelaPerguntas implements ActionListener  {
 		return questao;
 	}
 	
+	public static void setaTempo() throws InterruptedException{
+		if(w1.isVisible() == false){
+		for (i = oldtime; i >= 0; i--){
+			while(selecionado == true){
+				System.out.println(selecionado);
+				i = i ;
+			}
+			Thread.sleep(1000);
+			curtime = i;
+			tempo.setText("Tempo:" + curtime);
+			if (i == 0){
+				JOptionPane.showMessageDialog(null, "Tempo acabou. Voce perde tudo","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+				w1.dispose();
+			}
+		}
+	}
+}
+	
 	
 		//funcao para setar as perguntas na JanelaPerguntas
 		public static void setarCaixa(int nivel) {
@@ -160,7 +195,7 @@ public class JanelaPerguntas implements ActionListener  {
 			res[3].setText(questao.resposta4);
 			
 			//Teste
-			System.out.println(questao.respostaCorreta +  "      " + questao.nivel);
+			//System.out.println(questao.respostaCorreta +  "      " + questao.nivel);
 				
 		}
 		public static void removerQuestao (int nivel) {
@@ -194,10 +229,11 @@ public class JanelaPerguntas implements ActionListener  {
 		
 		//Metodos criados para otimizar eventos nos botoes de resposta
 		public static void acertarPergunta() throws IOException, InterruptedException {
-			File acertou = new File("acertou.wav");
 			Audio.tocarSom(acertou, 1800);
-			
 			JOptionPane.showMessageDialog(null, "Acertou", "Parabens!", JOptionPane.INFORMATION_MESSAGE);
+			curtime = 30;
+			i = 30;
+			tempo.setText("Tempo:" + curtime);
 			
 			
 			if (acertos < 5) {
@@ -293,7 +329,6 @@ public class JanelaPerguntas implements ActionListener  {
 		public static void errarPergunta() throws IOException, InterruptedException {
 			
 			//novo código:
-			File errou = new File("errou.wav");
 			Audio.tocarSom(errou, 1800);
 			
 			// 
@@ -303,6 +338,7 @@ public class JanelaPerguntas implements ActionListener  {
 				acumulado = (acertos -1) * 1000;
 				acumulado /= 2;
 				JOptionPane.showMessageDialog(null, "Voce errou. Voce leva R$:" + acumulado + ",00","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+	
 			}
 			
 			if (acertos > 6 && acertos <= 11) {
@@ -347,10 +383,11 @@ public class JanelaPerguntas implements ActionListener  {
 			}
 		}
 		
-		public void resetarBackground() {
+		public void resetarBackground() throws InterruptedException {
 			for (int i = 0; i < 4; i++) {
 				res[i].setBackground(null);
 			}
+			selecionado = false;
 		}
 		
 		public void actionPerformed(ActionEvent e) {
@@ -364,6 +401,7 @@ public class JanelaPerguntas implements ActionListener  {
 						setarBackground();
 						
 						if (res[i].getText().equals(certo)) {
+							selecionado = true;
 							acertarPergunta();
 							resetarBackground();
 						}
@@ -505,6 +543,8 @@ public class JanelaPerguntas implements ActionListener  {
 			public void setarPulo() {
 				if (validarPulo()) {
 					pularQuestao();
+					curtime = 30;
+					i = 30;
 					if (nDePulos != 1) {
 						pulos.setText("Voce tem " + nDePulos + " pulos");
 					}
