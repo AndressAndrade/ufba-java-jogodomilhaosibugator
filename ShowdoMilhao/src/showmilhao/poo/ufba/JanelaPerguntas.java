@@ -165,14 +165,15 @@ public class JanelaPerguntas implements ActionListener  {
 	}
 	
 	public static void setaTempo() throws InterruptedException{
-		if(w1.isVisible() == false){
 		for (i = oldtime; i >= 0; i--){
 			while(selecionado == true){
-				System.out.println(selecionado);
-				i = i ;
+				System.out.println("selecionado" + selecionado);
+				i = oldtime;
 			}
+			System.out.println("janelinha" + w1.isActive());
 			Thread.sleep(1000);
 			curtime = i;
+			System.out.println(i);
 			tempo.setText("Tempo:" + curtime);
 			if (i == 0){
 				JOptionPane.showMessageDialog(null, "Tempo acabou. Voce perde tudo","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
@@ -180,7 +181,6 @@ public class JanelaPerguntas implements ActionListener  {
 			}
 		}
 	}
-}
 	
 	
 		//funcao para setar as perguntas na JanelaPerguntas
@@ -316,11 +316,11 @@ public class JanelaPerguntas implements ActionListener  {
 						+ "e ganhou um premio de R$:1.000.000,00 !!!","Voce joga muito!", JOptionPane.INFORMATION_MESSAGE);
 				JOptionPane.showMessageDialog(null, "Caiu no conto do vigario, perdeu tudo ao clicar\n" 
 						+ "em OK! Fim do programa.","", JOptionPane.INFORMATION_MESSAGE);
+				selecionado = true;
 				final ImageIcon ganhouimage = new ImageIcon("ganhou.jpg");
-				JOptionPane.showMessageDialog(null, "Você é fera, bicho", "YOU WON", JOptionPane.INFORMATION_MESSAGE, ganhouimage);
-				
+				JOptionPane.showMessageDialog(null, null, "Você é fera, bicho", JOptionPane.INFORMATION_MESSAGE, ganhouimage);
 				w1.dispose();		
-					
+				System.exit(0);
 			}
 			
 			acertos++;
@@ -360,10 +360,12 @@ public class JanelaPerguntas implements ActionListener  {
 					final ImageIcon fausto = new ImageIcon("darkfausto.jpg");
 					Audio perdeu = new Audio();
 					perdeu.audioid = 0;
+					selecionado = true;
 					JOptionPane.showMessageDialog(null, "Voce perdeu tudo.","GAME OVER!", JOptionPane.INFORMATION_MESSAGE);
 					Thread threadMusica = new Thread(perdeu);
 				    threadMusica.start();
 					JOptionPane.showMessageDialog(null, " ", "GAME OVER", JOptionPane.INFORMATION_MESSAGE, fausto);
+					System.exit(0);
 					
 				}
 				else {
@@ -419,6 +421,7 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			//Tratamento de evento do botÃ£o parar
 			if (e.getSource() == parar) {
+				selecionado = true;
 				w1.dispose();
 				if (acertos <= 6) {
 					
@@ -447,6 +450,7 @@ public class JanelaPerguntas implements ActionListener  {
 					}
 				}
 				
+				System.exit(0);
 			}
 			
 			
