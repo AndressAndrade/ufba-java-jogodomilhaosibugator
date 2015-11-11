@@ -78,11 +78,7 @@ public class Questionario {
 	}
 	
 	
-	public static void main(String[] args) {
-<<<<<<< HEAD
-=======
->>>>>>> 4e26e289b8b790d61ea52337aa8ab69d2ebbd6a5
-		
+	public static void main(String[] args) {	
 		//Teste
 		readQuestionario();
 		Questao questao = listaQuestoes.get(0);
