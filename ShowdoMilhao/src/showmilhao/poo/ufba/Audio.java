@@ -62,21 +62,6 @@ public class Audio implements Runnable {
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
-		 /*File errou = new File("errou.wav");
-		 File perdeu = new File("SoundofSilence.wav");
-		 File acertou = new File ("acertou.wav");
-		 File comeco = new File("sibugator.wav");
-		 tocarSom(comeco, 5600);
-		 tocarSom2(perdeu);
-		 //tocarSom(acertou);
-		 tocarSom(errou);
-		 */ 
-		
-		/*
-		File audioDinheiro = new File("dinheiro.wav");
-		tocarSom(audioDinheiro, 1550);
-		*/
-
 	}
 
 }

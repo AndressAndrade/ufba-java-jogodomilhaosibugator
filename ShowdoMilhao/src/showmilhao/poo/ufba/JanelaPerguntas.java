@@ -212,15 +212,13 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			if (nivel == 2) {
 				Questionario.listaQuestoes2.remove(0);
-				if (acertos == 5){
-					//JOptionPane.showMessageDialog(null, "Voce chegou no nivel 2","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+				if (acertos == 5){	
 				}
 			}
 			
 			if (nivel == 3) {
 				Questionario.listaQuestoes3.remove(0);
 				if (acertos == 10){
-					//JOptionPane.showMessageDialog(null, "Voce chegou no nivel 3","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 				}
 			}
 			
@@ -228,7 +226,7 @@ public class JanelaPerguntas implements ActionListener  {
 				Questionario.listaQuestoes4.remove(0);
 				pulos.setText("Pergunta Final");
 				if (acertos == 15){
-					//JOptionPane.showMessageDialog(null, "Voce chegou no nivel 4","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+					
 				}
 			}
 		}
@@ -248,10 +246,7 @@ public class JanelaPerguntas implements ActionListener  {
 			}
 		}
 		
-		//Metodos criados para otimizar eventos nos botoes de resposta
-		public static void acertarPergunta() throws IOException, InterruptedException {
-			
-			
+		public static void acertarPergunta() throws IOException, InterruptedException {	
 			if (acertos != 16) {
 				Audio.tocarSom(acertou, 1800);
 				JOptionPane.showMessageDialog(null, "Acertou", "Parabens!", JOptionPane.INFORMATION_MESSAGE);
@@ -436,8 +431,6 @@ public class JanelaPerguntas implements ActionListener  {
 		}
 		
 		public void actionPerformed(ActionEvent e) {
-			
-			//Tratamento de evento nos botoes de resposta
 			for (int i = 0; i < 4; i++)
 				{ 
 				if (e.getSource() == res[i]) {
@@ -474,7 +467,6 @@ public class JanelaPerguntas implements ActionListener  {
 			}
 			
 			
-			//Tratamento de evento do botão parar
 			if (e.getSource() == parar) {
 				selecionado = true;
 				w1.dispose();
@@ -509,7 +501,6 @@ public class JanelaPerguntas implements ActionListener  {
 			}
 			
 			
-			//Tratamento de evento do botao pular
 			if (e.getSource() == pular) {
 				setarPulo();
 			}

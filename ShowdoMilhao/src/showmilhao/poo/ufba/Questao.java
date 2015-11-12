@@ -21,19 +21,6 @@ public class Questao {
 	String	numeracao;
 	
 	public static void main(String[] args) {
-		/*teste
-		Questionario.readQuestionario();
-		Questao questao = Questionario.listaQuestoes.get(0);
-		System.out.println(questao.nivel);
-		System.out.println(questao.pergunta);
-		System.out.println(questao.resposta1);
-		System.out.println(questao.resposta2);
-		System.out.println(questao.resposta3);
-		System.out.println(questao.resposta4);
-		System.out.println(questao.respostaCorreta);
-		System.out.println(questao.valor);
-		System.out.println(questao.numeracao);
-		*/
 		
 	}
 
