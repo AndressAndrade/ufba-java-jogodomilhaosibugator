@@ -14,9 +14,9 @@ public class JanelaPerguntas implements ActionListener  {
 
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	
-	static  JLabel	pergunta;
-	static  JButton res[] = new JButton[4];
-	JButton parar = new JButton();
+	static   JLabel	pergunta;
+	static   JButton res[] = new JButton[4];
+	JButton  parar = new JButton();
 	JButton  pular;
 	
 	static  JLabel  acertar;
@@ -36,10 +36,10 @@ public class JanelaPerguntas implements ActionListener  {
 
 	static boolean selecionado = false;
 	
-	
 	static int acertos = 1;
 	static int acertos2 = 1;
 	static int acertos3 = 1;
+	static int nivelAtual = 1;
 	
 	static String certo;
 	
@@ -91,7 +91,6 @@ public class JanelaPerguntas implements ActionListener  {
 		w1.setSize(420,450);
 		w1.setLocation((int)(dim.getWidth()-420)/2,(int)(dim.getHeight()-450)/2);
 		w1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// w1.setVisible(true);
 		w1.getContentPane().setLayout(null);
 		
 		pergunta = new JLabel("Perguntas aqui:");
@@ -123,7 +122,7 @@ public class JanelaPerguntas implements ActionListener  {
 		w1.getContentPane().add(pular);
 		
 		tempo = new JLabel("Tempo:" + curtime);
-		tempo.setBounds(12,290,120,40);
+		tempo.setBounds(12,295,120,40);
 		w1.getContentPane().add(tempo);
 		
 		acertar = new JLabel("Acerto: R$:1000,00");
@@ -213,14 +212,14 @@ public class JanelaPerguntas implements ActionListener  {
 			if (nivel == 2) {
 				Questionario.listaQuestoes2.remove(0);
 				if (acertos == 5){
-					JOptionPane.showMessageDialog(null, "Voce chegou no nivel 2","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+					//JOptionPane.showMessageDialog(null, "Voce chegou no nivel 2","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 				}
 			}
 			
 			if (nivel == 3) {
 				Questionario.listaQuestoes3.remove(0);
 				if (acertos == 10){
-					JOptionPane.showMessageDialog(null, "Voce chegou no nivel 3","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+					//JOptionPane.showMessageDialog(null, "Voce chegou no nivel 3","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 				}
 			}
 			
@@ -228,7 +227,7 @@ public class JanelaPerguntas implements ActionListener  {
 				Questionario.listaQuestoes4.remove(0);
 				pulos.setText("Pergunta Final");
 				if (acertos == 15){
-					JOptionPane.showMessageDialog(null, "Voce chegou no nivel 4","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+					//JOptionPane.showMessageDialog(null, "Voce chegou no nivel 4","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 				}
 			}
 		}
@@ -240,14 +239,24 @@ public class JanelaPerguntas implements ActionListener  {
 		}
 		
 		
+		public static void passarDeNivel() {
+			
+			if (acertos == 5 || acertos == 10 || acertos == 15) {
+				++nivelAtual;
+				JOptionPane.showMessageDialog(null, "Voce chegou no nivel " + nivelAtual,"Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+			}
+		}
+		
 		//Metodos criados para otimizar eventos nos botoes de resposta
 		public static void acertarPergunta() throws IOException, InterruptedException {
+			
 			
 			if (acertos != 16) {
 				Audio.tocarSom(acertou, 1800);
 				JOptionPane.showMessageDialog(null, "Acertou", "Parabens!", JOptionPane.INFORMATION_MESSAGE);
 			}
 			
+			passarDeNivel();
 			
 			curtime = 30;
 			i = 30;
