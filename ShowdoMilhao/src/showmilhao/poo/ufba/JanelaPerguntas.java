@@ -50,7 +50,7 @@ public class JanelaPerguntas implements ActionListener  {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		JOptionPane.showMessageDialog(null, "Clique no OK para comecar o jogo", "Bem-vindo ao Show do Milhao", JOptionPane.INFORMATION_MESSAGE);
-		Audio.tocarSom(comeco, 5600);
+		//Audio.tocarSom(comeco, 5600);
 		
 		//janelas de perguntas
 		
@@ -201,6 +201,7 @@ public class JanelaPerguntas implements ActionListener  {
 		public static void removerQuestao (int nivel) {
 			
 		//novo metodo auxiliar
+		
 			
 			if (nivel == 1) {
 				Questionario.listaQuestoes.remove(0);
@@ -208,15 +209,24 @@ public class JanelaPerguntas implements ActionListener  {
 			
 			if (nivel == 2) {
 				Questionario.listaQuestoes2.remove(0);
+				if (acertos == 5){
+					JOptionPane.showMessageDialog(null, "Voce chegou no nivel 2","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
 			
 			if (nivel == 3) {
 				Questionario.listaQuestoes3.remove(0);
+				if (acertos == 10){
+					JOptionPane.showMessageDialog(null, "Voce chegou no nivel 3","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
 			
 			if (nivel == 4) {
 				Questionario.listaQuestoes4.remove(0);
 				pulos.setText("Pergunta Final");
+				if (acertos == 15){
+					JOptionPane.showMessageDialog(null, "Voce chegou no nivel 4","Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
 		}
 		
@@ -374,6 +384,7 @@ public class JanelaPerguntas implements ActionListener  {
 			}	
 			
 			w1.dispose();
+			System.exit(0);
 		}
 		
 		
