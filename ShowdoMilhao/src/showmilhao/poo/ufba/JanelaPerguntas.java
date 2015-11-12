@@ -50,7 +50,7 @@ public class JanelaPerguntas implements ActionListener  {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		JOptionPane.showMessageDialog(null, "Clique no OK para comecar o jogo", "Bem-vindo ao Show do Milhao", JOptionPane.INFORMATION_MESSAGE);
-		//Audio.tocarSom(comeco, 5600);
+		Audio.tocarSom(comeco, 5600);
 		
 		//janelas de perguntas
 		
@@ -76,6 +76,7 @@ public class JanelaPerguntas implements ActionListener  {
 			setarCaixa(4);
 		}
 		
+		w1.setVisible(true);
 		setaTempo();
 
 	}
@@ -88,7 +89,7 @@ public class JanelaPerguntas implements ActionListener  {
 		w1.setSize(420,450);
 		w1.setLocation((int)(dim.getWidth()-420)/2,(int)(dim.getHeight()-450)/2);
 		w1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		w1.setVisible(true);
+		// w1.setVisible(true);
 		w1.getContentPane().setLayout(null);
 		
 		pergunta = new JLabel("Perguntas aqui:");
