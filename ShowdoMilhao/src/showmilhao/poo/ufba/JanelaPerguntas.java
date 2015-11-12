@@ -49,7 +49,9 @@ public class JanelaPerguntas implements ActionListener  {
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
-		JOptionPane.showMessageDialog(null, "Clique no OK para comecar o jogo", "Bem-vindo ao Show do Milhao", JOptionPane.INFORMATION_MESSAGE);
+		final ImageIcon abertura = new ImageIcon("abertura.png");
+		JOptionPane.showMessageDialog(null, "", "Clique no OK para começar o jogo", JOptionPane.INFORMATION_MESSAGE, abertura);
+
 		Audio.tocarSom(comeco, 5600);
 		
 		//janelas de perguntas
@@ -296,37 +298,18 @@ public class JanelaPerguntas implements ActionListener  {
 			}
 			
 			if (acertos == 16) {
+				
+				sumonarPopUps();
+	
 				Audio ganhou = new Audio();
 				ganhou.audioid = 1;
 				Thread threadMusica2 = new Thread(ganhou);
 			    threadMusica2.start();
-		
-				JOptionPane.showMessageDialog(null, "Voce tem certeza?\n" 
-						+ "","", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "Voce tem certeza MESMO?\n" 
-						+ "","", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "POP UP!\n" 
-						+ "","", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "NAO FOI DESSA VEZ\n" 
-						+ "","", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "Voce foi DIBRADO\n" 
-						+ "","", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "Voce tem persistencia?\n" 
-						+ "","", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "Ich liebe dich nicht\n" 
-						+ "","", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "ERROU\n" 
-						+ "","", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "HUEUHEHUEUHEUHEHUE\n" 
-						+ "","", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "BRBRBRBRBRBRBR\n" 
-						+ "","", JOptionPane.INFORMATION_MESSAGE);	
-				JOptionPane.showMessageDialog(null, "Voce acaba de doar tudo a fundacao Bill Gates\n" 
-						+ "e sua pesquisa a vacas com odor humano!","", JOptionPane.INFORMATION_MESSAGE);		
 				JOptionPane.showMessageDialog(null, "Parabens! Voce venceu o Jogo do Milhao Sibugator\n" 
 						+ "e ganhou um premio de R$:1.000.000,00 !!!","Voce joga muito!", JOptionPane.INFORMATION_MESSAGE);
-				JOptionPane.showMessageDialog(null, "Caiu no conto do vigario, perdeu tudo ao clicar\n" 
-						+ "em OK! Fim do programa.","", JOptionPane.INFORMATION_MESSAGE);
+				
+				sumonarPopUpsWin();
+				
 				selecionado = true;
 				final ImageIcon ganhouimage = new ImageIcon("ganhou.jpg");
 				JOptionPane.showMessageDialog(null, null, "Você é fera, bicho", JOptionPane.INFORMATION_MESSAGE, ganhouimage);
@@ -368,6 +351,7 @@ public class JanelaPerguntas implements ActionListener  {
 				acumulado = (acertos3 -1) * 100000;
 				acumulado /= 2;
 				if (acertos == 16) {
+					sumonarPopUps();
 					final ImageIcon fausto = new ImageIcon("darkfausto.jpg");
 					Audio perdeu = new Audio();
 					perdeu.audioid = 0;
@@ -388,6 +372,36 @@ public class JanelaPerguntas implements ActionListener  {
 			System.exit(0);
 		}
 		
+		
+		public static void sumonarPopUps() {
+			JOptionPane.showMessageDialog(null, "Voce tem certeza?\n" 
+					+ "","", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Voce tem certeza MESMO?\n" 
+					+ "","", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "POP UP!\n" 
+					+ "","", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "NAO FOI DESSA VEZ\n" 
+					+ "","", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Voce foi DIBRADO\n" 
+					+ "","", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Voce tem persistencia?\n" 
+					+ "","", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Ich liebe dich nicht\n" 
+					+ "","", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "ERROU\n" 
+					+ "","", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "HUEUHEHUEUHEUHEHUE\n" 
+					+ "","", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "BRBRBRBRBRBRBR\n" 
+					+ "","", JOptionPane.INFORMATION_MESSAGE);	
+		}
+		
+		public static void sumonarPopUpsWin() {
+			JOptionPane.showMessageDialog(null, "Voce acaba de metade do dinheiro para a fundacao Bill Gates\n" 
+					+ "e sua pesquisa a vacas com odor humano!","", JOptionPane.INFORMATION_MESSAGE);		
+			JOptionPane.showMessageDialog(null, "Caiu no conto do vigario, perdeu tudo ao clicar\n" 
+					+ "em OK! Fim do programa.","", JOptionPane.INFORMATION_MESSAGE);
+		}
 		
 		public void setarBackground() {
 			for (int i = 0; i < 4; i++) {
