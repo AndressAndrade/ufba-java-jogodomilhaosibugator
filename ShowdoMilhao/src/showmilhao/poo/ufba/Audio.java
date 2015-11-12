@@ -72,6 +72,10 @@ public class Audio implements Runnable {
 		 tocarSom(errou);
 		 */ 
 		
+		/*
+		File audioDinheiro = new File("dinheiro.wav");
+		tocarSom(audioDinheiro, 1550);
+		*/
 
 	}
 

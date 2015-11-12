@@ -46,6 +46,7 @@ public class JanelaPerguntas implements ActionListener  {
 	static File acertou = new File("acertou.wav");
 	static File errou = new File("errou.wav");
 	static File comeco = new File("sibugator.wav");
+	static File audioDinheiro = new File("dinheiro.wav");
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
@@ -241,7 +242,7 @@ public class JanelaPerguntas implements ActionListener  {
 		
 		public static void passarDeNivel() {
 			
-			if (acertos == 5 || acertos == 10 || acertos == 15) {
+			if (acertos == 5 || acertos == 10) {
 				++nivelAtual;
 				JOptionPane.showMessageDialog(null, "Voce chegou no nivel " + nivelAtual,"Bom Jogo!", JOptionPane.INFORMATION_MESSAGE);
 			}
@@ -306,6 +307,8 @@ public class JanelaPerguntas implements ActionListener  {
 				}
 			}
 			if (acertos == 15) {
+				JOptionPane.showMessageDialog(null, "Voce chegou no ÚLTIMO nível! \n" + "Ou PARA ou pode PERDER TUDO!", null, JOptionPane.INFORMATION_MESSAGE);
+				Audio.tocarSom(audioDinheiro, 1550);
 				setarQuestao(4);
 				acertar.setText("Milhao: R$:1.000.000,00");
 				acumular.setText("Acumulado: R$: 500.000,00");
@@ -326,7 +329,7 @@ public class JanelaPerguntas implements ActionListener  {
 				
 				selecionado = true;
 				final ImageIcon ganhouimage = new ImageIcon("ganhou.jpg");
-				JOptionPane.showMessageDialog(null, null, "Você é fera, bicho", JOptionPane.INFORMATION_MESSAGE, ganhouimage);
+				JOptionPane.showMessageDialog(null, null, "VOCÊ É FERA, BICHO", JOptionPane.INFORMATION_MESSAGE, ganhouimage);
 				w1.dispose();		
 				System.exit(0);
 			}
