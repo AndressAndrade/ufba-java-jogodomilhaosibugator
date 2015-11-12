@@ -242,8 +242,13 @@ public class JanelaPerguntas implements ActionListener  {
 		
 		//Metodos criados para otimizar eventos nos botoes de resposta
 		public static void acertarPergunta() throws IOException, InterruptedException {
-			Audio.tocarSom(acertou, 1800);
-			JOptionPane.showMessageDialog(null, "Acertou", "Parabens!", JOptionPane.INFORMATION_MESSAGE);
+			
+			if (acertos != 16) {
+				Audio.tocarSom(acertou, 1800);
+				JOptionPane.showMessageDialog(null, "Acertou", "Parabens!", JOptionPane.INFORMATION_MESSAGE);
+			}
+			
+			
 			curtime = 30;
 			i = 30;
 			tempo.setText("Tempo:" + curtime);
@@ -322,9 +327,9 @@ public class JanelaPerguntas implements ActionListener  {
 		
 		public static void errarPergunta() throws IOException, InterruptedException {
 			
-			//novo código:
-			Audio.tocarSom(errou, 1800);
-			
+			if (acertos != 16) {
+				Audio.tocarSom(errou, 1800);
+			}
 			// 
 			
 			if (acertos <= 6) {
@@ -397,8 +402,8 @@ public class JanelaPerguntas implements ActionListener  {
 		}
 		
 		public static void sumonarPopUpsWin() {
-			JOptionPane.showMessageDialog(null, "Voce acaba de metade do dinheiro para a fundacao Bill Gates\n" 
-					+ "e sua pesquisa a vacas com odor humano!","", JOptionPane.INFORMATION_MESSAGE);		
+			JOptionPane.showMessageDialog(null, "Voce acaba de doar metade do dinheiro para a fundacao Bill Gates\n" 
+					+ "e sua pesquisa de vacas com odor humano!","", JOptionPane.INFORMATION_MESSAGE);		
 			JOptionPane.showMessageDialog(null, "Caiu no conto do vigario, perdeu tudo ao clicar\n" 
 					+ "em OK! Fim do programa.","", JOptionPane.INFORMATION_MESSAGE);
 		}
@@ -426,17 +431,29 @@ public class JanelaPerguntas implements ActionListener  {
 				if (e.getSource() == res[i]) {
 					
 					try {
-						setarBackground();
 						
-						if (res[i].getText().equals(certo)) {
-							selecionado = true;
-							acertarPergunta();
-							resetarBackground();
+						if (acertos != 16) {
+							setarBackground();
+						
+							if (res[i].getText().equals(certo)) {
+								selecionado = true;
+								acertarPergunta();
+								resetarBackground();
+							}
+						
+							else {
+								res[i].setBackground(Color.RED);
+								errarPergunta();
+							}
 						}
-						
 						else {
-							res[i].setBackground(Color.RED);
-							errarPergunta();
+							selecionado = true;
+							if (res[i].getText().equals(certo)) { 
+								acertarPergunta();
+							}
+							else {
+								errarPergunta();
+							}
 						}
 					} catch (IOException | InterruptedException e1) {
 						e1.printStackTrace();
